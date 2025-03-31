@@ -31,3 +31,26 @@ body {
   font-weight: 400;
   font-style: italic;
 }
+#personal-info {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+#personal-info a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.content {
+  padding: 16px;
+}
+
+h1 {
+  font-family: "Rammetto One", sans-serif;
+  font-size: 3rem;
+}
