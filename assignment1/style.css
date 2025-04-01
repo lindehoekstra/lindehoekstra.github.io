@@ -1,5 +1,9 @@
 body {
   background-color: #ffa441;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  align-items: center;
 }
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
@@ -7,12 +11,12 @@ body {
   font-style: normal;
 }
 
-.newsreader-<uniquifier > {
+/* .newsreader-<uniquifier > {
   font-family: "Newsreader", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-}
+} */
 
 .lekton-regular {
   font-family: "Lekton", monospace;
@@ -31,8 +35,109 @@ body {
   font-weight: 400;
   font-style: italic;
 }
-#personal-info {
-  position: sticky;
+
+.grid-containter {
+  display: grid;
+  border: 2px grey;
+  min-height: 500px;
+  width: 500px;
+  padding: 10px;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "q1 a1 q2 a2"
+    "q3 a3 q4 a4"
+    "q5 a5 q6 a6"
+    "q7 a7 q8 a8"
+    "q9 a9 q10 a10"
+    "q11 a11 q12 a12"
+    "q13 a13";
+}
+
+.q1 {
+  grid-area: q1;
+}
+.a1 {
+  grid-area: a1;
+}
+.q2 {
+  grid-area: q2;
+}
+.a2 {
+  grid-area: a2;
+}
+.q3 {
+  grid-area: q3;
+}
+.a3 {
+  grid-area: a3;
+}
+.q4 {
+  grid-area: q4;
+}
+.a4 {
+  grid-area: a4;
+}
+.q5 {
+  grid-area: q5;
+}
+.a5 {
+  grid-area: a5;
+}
+.q6 {
+  grid-area: q6;
+}
+.a6 {
+  grid-area: a6;
+}
+
+.q7 {
+  grid-area: q7;
+}
+.a7 {
+  grid-area: a7;
+}
+.q8 {
+  grid-area: q8;
+}
+.a8 {
+  grid-area: a8;
+}
+.q9 {
+  grid-area: q9;
+}
+.a9 {
+  grid-area: a9;
+}
+.q10 {
+  grid-area: q10;
+}
+.a10 {
+  grid-area: a10;
+}
+.q11 {
+  grid-area: q11;
+}
+.a11 {
+  grid-area: a11;
+}
+
+.q12 {
+  grid-area: q12;
+}
+.a12 {
+  grid-area: a12;
+}
+.q13 {
+  grid-area: q13;
+}
+.a13 {
+  grid-area: a13;
+}
+
+/* #personal-info {
+  position: top;
   top: 0;
   overflow: hidden;
 }
@@ -44,13 +149,17 @@ body {
   text-align: center;
   padding: 14px;
   text-decoration: none;
-}
+} */
 
-.content {
+/* .content {
   padding: 16px;
-}
+} */
 
 h1 {
   font-family: "Rammetto One", sans-serif;
   font-size: 3rem;
+}
+
+.box1 {
+  background-color: blue;
 }
