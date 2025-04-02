@@ -2,6 +2,7 @@ body {
   background-color: #ffa441;
   display: flex;
   text-align: center;
+  width: 100%;
   margin: auto;
   align-items: center;
 }
@@ -36,51 +37,88 @@ body {
   font-style: italic;
 }
 
-.grid-containter {
+.grid-container {
   display: grid;
-  border: 2px grey;
-  min-height: 500px;
-  width: 500px;
+  border: 2px red;
   padding: 10px;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "q1 a1 q2 a2"
-    "q3 a3 q4 a4"
-    "q5 a5 q6 a6"
-    "q7 a7 q8 a8"
-    "q9 a9 q10 a10"
-    "q11 a11 q12 a12"
-    "q13 a13";
+    "h1 h1 h1 h1 h1"
+    "h2 h2 h2 h2 h2"
+    "q1 q1 a1 a1 a1"
+    "q1 q1 a1 a1 a1"
+    "q2 q2 q2 .. .."
+    ".. .. a2 a2 a2"
+    "q3 q3 q3 .. .."
+    ".. .. a3 a3 a3"
+    "q4 q4 a4 a4 a4"
+    "q4 q4 a4 a4 a4"
+    "q5 q5 q5 q5 q5"
+    "a5 a5 a5 . . "
+    ". . . a6 a6"
+    "a7 a7 a7 q7 q7"
+    "q8 . . . . "
+    "a8 a8 a8 a8 a8"
+    "q9 q9 a9 a9 a9"
+    "q10 q10 q11 q11 q11"
+    "a10 a10 a11 a11 a11"
+    ". . . q12 12"
+    "a12 a12 a12 a12 a12"
+    "q13 13 . q13 13"
+    ". a13 a13 a13 .";
+}
+
+.h1 {
+  grid-area: h1;
+  background-color: lime;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 3rem;
+}
+.h2 {
+  grid-area: h2;
+  background-color: blue;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 3rem;
 }
 
 .q1 {
   grid-area: q1;
+  background-color: aquamarine;
 }
 .a1 {
   grid-area: a1;
+  background-color: pink;
 }
 .q2 {
   grid-area: q2;
+  background-color: aquamarine;
 }
 .a2 {
   grid-area: a2;
+  background-color: pink;
 }
 .q3 {
   grid-area: q3;
+  background-color: aquamarine;
 }
 .a3 {
   grid-area: a3;
+  background-color: pink;
 }
 .q4 {
   grid-area: q4;
+  background-color: aquamarine;
 }
 .a4 {
   grid-area: a4;
+  background-color: pink;
 }
 .q5 {
   grid-area: q5;
+  background-color: aquamarine;
 }
 .a5 {
   grid-area: a5;
@@ -134,32 +172,4 @@ body {
 }
 .a13 {
   grid-area: a13;
-}
-
-/* #personal-info {
-  position: top;
-  top: 0;
-  overflow: hidden;
-}
-
-#personal-info a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-} */
-
-/* .content {
-  padding: 16px;
-} */
-
-h1 {
-  font-family: "Rammetto One", sans-serif;
-  font-size: 3rem;
-}
-
-.box1 {
-  background-color: blue;
 }
