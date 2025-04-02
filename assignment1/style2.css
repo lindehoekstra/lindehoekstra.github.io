@@ -1,12 +1,26 @@
+body {
+  background-color: #1a120b;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-container {
+  border: 2px dashed #e5e5cb56;
+  width: 500px;
+  min-height: 500px;
+  padding: 10px;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "h1 h1 h1"
-    "h2 h2 h2"
-    "q1 q1 h1";
+    "h1 h1 h1 h1"
+    "h2 h2 h2 h2"
+    "q1 q1 h1 h1";
 }
 
 .h1 {
