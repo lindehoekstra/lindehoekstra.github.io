@@ -1,7 +1,7 @@
 body {
   background-color: #ffa441;
   display: flex;
-  text-align: center;
+  text-align: left;
   width: 100%;
   margin: auto;
   justify-content: center;
@@ -45,10 +45,35 @@ body {
   padding: 10px;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(23, 1fr);
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+  /* grid-template-rows: repeat(23, 1fr); */
 
   grid-template-areas:
+    "h1 h1 h1 h1 h1"
+    "h2 h2 h2 h2 h2"
+    "q1 q1 a1 a1 a1"
+    "q1 q1 a1 a1 a1"
+    "q2 q2 q2 .. .."
+    "a2 a2 a2 a2 a2"
+    "q3 q3 q3 .. .."
+    ".. .. a3 a3 a3"
+    "q4 q4 a4 a4 a4"
+    "q4 q4 a4 a4 a4"
+    "q5 q5 q5 q5 q5"
+    "a5 a5 a5 . . "
+    "q6 q6 q6 a6 a6"
+    "a7 a7 a7 q7 q7"
+    "q8 . . . . "
+    "a8 a8 a8 a8 a8"
+    "q9 q9 a9 a9 a9"
+    "q10 q10 q11 q11 q11"
+    "a10 a10 a11 a11 a11"
+    ". . . q12 12"
+    "a12 a12 a12 a12 a12"
+    "q13 q13 q13 q13 q13"
+    ". a13 a13 a13 .";
+
+  /* grid-template-areas:
     "h1 h1 h1 h1 h1"
     "h2 h2 h2 h2 h2"
     "q1 q1 a1 a1 a1"
@@ -61,7 +86,7 @@ body {
     "q4 q4 a4 a4 a4"
     "q5 q5 q5 q5 q5"
     "a5 a5 a5 . . "
-    ". . . a6 a6"
+    "q6 q6 q6 a6 a6"
     "a7 a7 a7 q7 q7"
     "q8 . . . . "
     "a8 a8 a8 a8 a8"
@@ -70,8 +95,8 @@ body {
     "a10 a10 a11 a11 a11"
     ". . . q12 12"
     "a12 a12 a12 a12 a12"
-    "q13 13 . q13 13"
-    ". a13 a13 a13 .";
+    "q13 13 q13 q13 q13"
+    ". a13 a13 a13 ."; */
 }
 
 .h1 {
@@ -126,54 +151,71 @@ body {
 }
 .a5 {
   grid-area: a5;
+  background-color: pink;
 }
 .q6 {
   grid-area: q6;
+  background-color: aquamarine;
 }
 .a6 {
   grid-area: a6;
+  background-color: pink;
 }
 
 .q7 {
   grid-area: q7;
+  background-color: aquamarine;
 }
 .a7 {
   grid-area: a7;
+  background-color: pink;
 }
 .q8 {
   grid-area: q8;
+  background-color: aquamarine;
 }
 .a8 {
   grid-area: a8;
+  background-color: pink;
 }
 .q9 {
   grid-area: q9;
+  background-color: aquamarine;
 }
 .a9 {
   grid-area: a9;
+  background-color: pink;
 }
 .q10 {
   grid-area: q10;
+  background-color: aquamarine;
 }
 .a10 {
   grid-area: a10;
+  background-color: pink;
 }
 .q11 {
   grid-area: q11;
+  background-color: aquamarine;
 }
 .a11 {
   grid-area: a11;
+  background-color: pink;
 }
 
 .q12 {
   grid-area: q12;
+  background-color: aquamarine;
 }
 .a12 {
   grid-area: a12;
+  background-color: pink;
 }
 .q13 {
   grid-area: q13;
+  background-color: aquamarine;
 }
 .a13 {
   grid-area: a13;
+  background-color: pink;
 }
