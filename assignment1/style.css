@@ -45,8 +45,8 @@ body {
   padding: 10px;
   display: grid;
   gap: 1rem;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
-  /* grid-template-rows: repeat(23, 1fr); */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
 
   grid-template-areas:
     "h1 h1 h1 h1 h1"
@@ -72,31 +72,6 @@ body {
     "a12 a12 a12 a12 a12"
     "q13 q13 q13 q13 q13"
     ". a13 a13 a13 .";
-
-  /* grid-template-areas:
-    "h1 h1 h1 h1 h1"
-    "h2 h2 h2 h2 h2"
-    "q1 q1 a1 a1 a1"
-    "q1 q1 a1 a1 a1"
-    "q2 q2 q2 .. .."
-    ".. .. a2 a2 a2"
-    "q3 q3 q3 .. .."
-    ".. .. a3 a3 a3"
-    "q4 q4 a4 a4 a4"
-    "q4 q4 a4 a4 a4"
-    "q5 q5 q5 q5 q5"
-    "a5 a5 a5 . . "
-    "q6 q6 q6 a6 a6"
-    "a7 a7 a7 q7 q7"
-    "q8 . . . . "
-    "a8 a8 a8 a8 a8"
-    "q9 q9 a9 a9 a9"
-    "q10 q10 q11 q11 q11"
-    "a10 a10 a11 a11 a11"
-    ". . . q12 12"
-    "a12 a12 a12 a12 a12"
-    "q13 13 q13 q13 q13"
-    ". a13 a13 a13 ."; */
 }
 
 .h1 {
