@@ -7,16 +7,23 @@
 --white: #ffffffff; */
 
 body {
-  background-color: #ffa441;
+  /* background-color: #ffa441; */
   display: flex;
   text-align: left;
   color: black;
-  width: 100%;
   margin: auto;
   justify-content: center;
   align-items: center;
   font-family: "Newsreader", serif;
   font-size: 1.2rem;
+
+  background: linear-gradient(
+    to bottom,
+    #ffa441ff 0%,
+    #ffa441ff 50%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
 }
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
@@ -50,15 +57,14 @@ body {
 }
 
 .grid-container {
-  border: 2px dashed red;
-  width: 100%;
+  /* width: 100%; */
   min-height: 500px;
-  padding: 10px;
+  padding: 60px;
   display: grid;
-  gap: 1rem;
+  gap: 3rem;
+  margin: 60px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-
   grid-template-areas:
     "h1 h1 h1 h1 h1"
     "h2 h2 . . ."
@@ -66,25 +72,24 @@ body {
     ". . . q1 q1"
     ". . . a1 a1"
     ". . . a1 a1"
-    "q2 q2 q2 .. .."
-    "a2 a2 a2 a2 a2"
-    "q3 q3 q3 .. .."
-    ".. .. a3 a3 a3"
-    "q4 q4 a4 a4 a4"
-    "q4 q4 a4 a4 a4"
-    "q5 q5 q5 q5 q5"
-    "a5 a5 a5 . . "
-    "q6 q6 q6 a6 a6"
+    "q2 q2 q2 . ."
+    "a2 a2 a2 . ."
+    "q3 q3 . q4 q4"
+    "a3 a3 . a4 a4"
+    "a5 a5 a5 q5 q5"
+    "q6 q6 a6 a6 a6"
     "a7 a7 a7 q7 q7"
-    "q8 . . . . "
-    "a8 a8 a8 a8 a8"
-    "q9 q9 a9 a9 a9"
+    "q8 q8 q8 q8 q8 "
+    "a8 . . . ."
+    ". . . q9 a9"
     "q10 q10 q11 q11 q11"
     "a10 a10 a11 a11 a11"
-    ". . . q12 12"
-    "a12 a12 a12 a12 a12"
-    "q13 q13 q13 q13 q13"
-    ". a13 a13 a13 .";
+    ". . q12 a12 a12"
+    "q13 . q12 a12 a12"
+    "q13 . . . ."
+    "q13 a13 a13 a13 a13";
+
+  background-blend-mode: ;
 }
 
 .h1 {
@@ -115,12 +120,16 @@ body {
 }
 .q3 {
   grid-area: q3;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 .a3 {
   grid-area: a3;
 }
 .q4 {
   grid-area: q4;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 .a4 {
   grid-area: a4;
@@ -180,4 +189,8 @@ body {
 }
 .a13 {
   grid-area: a13;
+}
+
+.ul {
+  list-style-type: circle;
 }
