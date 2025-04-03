@@ -7,7 +7,7 @@
 --white: #ffffffff; */
 
 body {
-  /* background-color: #ffa441; */
+  background-color: #ffa441;
   display: flex;
   text-align: left;
   color: black;
@@ -16,14 +16,14 @@ body {
   align-items: center;
   font-family: "Newsreader", serif;
   font-size: 1.2rem;
-
+  /* 
   background: linear-gradient(
     to bottom,
     #ffa441ff 0%,
     #ffa441ff 50%,
     #ffffff 50%,
     #ffffff 100%
-  );
+  ); */
 }
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
@@ -59,10 +59,10 @@ body {
 .grid-container {
   /* width: 100%; */
   min-height: 500px;
-  padding: 60px;
   display: grid;
-  gap: 3rem;
-  margin: 60px;
+  /* padding: 60px; */
+  /* gap: 3rem;
+  margin: 60px; */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -74,8 +74,8 @@ body {
     ". . . a1 a1"
     "q2 q2 q2 . ."
     "a2 a2 a2 . ."
-    "q3 q3 . q4 q4"
-    "a3 a3 . a4 a4"
+    "q3 q3 g q4 q4"
+    "a3 a3 g a4 a4"
     "a5 a5 a5 q5 q5"
     "q6 q6 a6 a6 a6"
     "a7 a7 a7 q7 q7"
@@ -88,8 +88,6 @@ body {
     "q13 . q12 a12 a12"
     "q13 . . . ."
     "q13 a13 a13 a13 a13";
-
-  background-blend-mode: ;
 }
 
 .h1 {
@@ -98,97 +96,149 @@ body {
   color: black;
   text-align: center;
   grid-area: h1;
+  padding: 60px;
 }
 .h2 {
   grid-area: h2;
   font-family: "Rammetto One", sans-serif;
   text-align: left;
   font-size: 1.3rem;
+  padding: 60px;
 }
 
 .q1 {
   grid-area: q1;
+  padding: 60px;
 }
 .a1 {
   grid-area: a1;
+  padding: 60px;
 }
 .q2 {
   grid-area: q2;
+  padding: 60px;
 }
 .a2 {
   grid-area: a2;
+  padding: 60px;
 }
 .q3 {
   grid-area: q3;
   font-size: 1.3rem;
   font-weight: bold;
+  padding: 60px;
+  background-color: #16a147ff;
 }
 .a3 {
   grid-area: a3;
+  padding: 60px;
+  background-color: #16a147ff;
 }
 .q4 {
   grid-area: q4;
   font-size: 1.3rem;
   font-weight: bold;
+  padding: 60px;
+  background-color: #16a147ff;
 }
 .a4 {
   grid-area: a4;
+  padding: 60px;
+  background-color: #16a147ff;
 }
 .q5 {
   grid-area: q5;
+  padding: 60px;
 }
 .a5 {
   grid-area: a5;
+  padding: 60px;
 }
 .q6 {
   grid-area: q6;
+  padding: 60px;
 }
 .a6 {
   grid-area: a6;
+  padding: 60px;
 }
 
 .q7 {
   grid-area: q7;
+  padding: 60px;
 }
 .a7 {
   grid-area: a7;
+  padding: 60px;
 }
 .q8 {
   grid-area: q8;
+  padding: 60px;
 }
 .a8 {
   grid-area: a8;
+  padding: 60px;
 }
 .q9 {
   grid-area: q9;
+  padding: 60px;
 }
 .a9 {
   grid-area: a9;
+  padding: 60px;
 }
 .q10 {
   grid-area: q10;
+  background-color: #ff6359ff;
+  padding: 60px;
 }
 .a10 {
   grid-area: a10;
+  padding: 60px;
+  background-color: #ff6359ff;
 }
 .q11 {
   grid-area: q11;
+  background-color: #ff6359ff;
+  padding: 60px;
 }
 .a11 {
   grid-area: a11;
+  padding: 60px;
+  background-color: #ff6359ff;
 }
 
 .q12 {
   grid-area: q12;
+  padding: 60px;
 }
 .a12 {
   grid-area: a12;
+  padding: 60px;
 }
 .q13 {
   grid-area: q13;
+  padding: 60px;
 }
 .a13 {
   grid-area: a13;
+  padding: 60px;
+}
+.green {
+  grid-area: g;
+  background-color: #16a147ff;
+}
+.blue {
+  grid-area: b;
+  background-color: #4596ffff;
+}
+.red {
+  grid-area: r;
+  background-color: #ff6359ff;
+}
+.white {
+  grid-area: w;
+  background-color: white;
 }
 
 .ul {
