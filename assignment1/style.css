@@ -1,11 +1,22 @@
+/* color palate: based on the colers from the Gethy website https://coolors.co/ffa441-16a147-4596ff-ff6359-ffffff */
+
+/* --orange-peel: #ffa441ff;
+--pigment-green: #16a147ff;
+--dodger-blue: #4596ffff;
+--bittersweet: #ff6359ff;
+--white: #ffffffff; */
+
 body {
   background-color: #ffa441;
   display: flex;
   text-align: left;
+  color: black;
   width: 100%;
   margin: auto;
   justify-content: center;
   align-items: center;
+  font-family: "Newsreader", serif;
+  font-size: 1.2rem;
 }
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
@@ -13,12 +24,12 @@ body {
   font-style: normal;
 }
 
-/* .newsreader-<uniquifier > {
+.newsreader {
   font-family: "Newsreader", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-} */
+}
 
 .lekton-regular {
   font-family: "Lekton", monospace;
@@ -50,9 +61,11 @@ body {
 
   grid-template-areas:
     "h1 h1 h1 h1 h1"
-    "h2 h2 h2 h2 h2"
-    "q1 q1 a1 a1 a1"
-    "q1 q1 a1 a1 a1"
+    "h2 h2 . . ."
+    ". . . q1 q1"
+    ". . . q1 q1"
+    ". . . a1 a1"
+    ". . . a1 a1"
     "q2 q2 q2 .. .."
     "a2 a2 a2 a2 a2"
     "q3 q3 q3 .. .."
@@ -75,122 +88,96 @@ body {
 }
 
 .h1 {
-  background-color: lime;
   font-family: "Rammetto One", sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
+  color: black;
+  text-align: center;
   grid-area: h1;
 }
 .h2 {
   grid-area: h2;
-  background-color: blue;
   font-family: "Rammetto One", sans-serif;
-  font-size: 3rem;
-  /* grid-row: 1/6; */
+  text-align: left;
+  font-size: 1.3rem;
 }
 
 .q1 {
   grid-area: q1;
-  background-color: aquamarine;
 }
 .a1 {
   grid-area: a1;
-  background-color: pink;
 }
 .q2 {
   grid-area: q2;
-  background-color: aquamarine;
 }
 .a2 {
   grid-area: a2;
-  background-color: pink;
 }
 .q3 {
   grid-area: q3;
-  background-color: aquamarine;
 }
 .a3 {
   grid-area: a3;
-  background-color: pink;
 }
 .q4 {
   grid-area: q4;
-  background-color: aquamarine;
 }
 .a4 {
   grid-area: a4;
-  background-color: pink;
 }
 .q5 {
   grid-area: q5;
-  background-color: aquamarine;
 }
 .a5 {
   grid-area: a5;
-  background-color: pink;
 }
 .q6 {
   grid-area: q6;
-  background-color: aquamarine;
 }
 .a6 {
   grid-area: a6;
-  background-color: pink;
 }
 
 .q7 {
   grid-area: q7;
-  background-color: aquamarine;
 }
 .a7 {
   grid-area: a7;
-  background-color: pink;
 }
 .q8 {
   grid-area: q8;
-  background-color: aquamarine;
 }
 .a8 {
   grid-area: a8;
-  background-color: pink;
 }
 .q9 {
   grid-area: q9;
-  background-color: aquamarine;
 }
 .a9 {
   grid-area: a9;
-  background-color: pink;
 }
 .q10 {
   grid-area: q10;
-  background-color: aquamarine;
 }
 .a10 {
   grid-area: a10;
-  background-color: pink;
 }
 .q11 {
   grid-area: q11;
-  background-color: aquamarine;
 }
 .a11 {
   grid-area: a11;
-  background-color: pink;
 }
 
 .q12 {
   grid-area: q12;
-  background-color: aquamarine;
 }
 .a12 {
   grid-area: a12;
-  background-color: pink;
 }
 .q13 {
   grid-area: q13;
-  background-color: aquamarine;
 }
 .a13 {
   grid-area: a13;
-  background-color: pink;
 }
