@@ -15,16 +15,9 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Newsreader", serif;
-  font-size: 1.2rem;
-  /* 
-  background: linear-gradient(
-    to bottom,
-    #ffa441ff 0%,
-    #ffa441ff 50%,
-    #ffffff 50%,
-    #ffffff 100%
-  ); */
+  font-size: 1.6rem;
 }
+
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
   font-weight: 400;
@@ -67,27 +60,44 @@ body {
   grid-template-rows: auto;
   grid-template-areas:
     "h1 h1 h1 h1 h1"
-    "h2 h2 . . ."
-    ". . . q1 q1"
-    ". . . q1 q1"
-    ". . . a1 a1"
-    ". . . a1 a1"
-    "q2 q2 q2 . ."
-    "a2 a2 a2 . ."
+    "h2 h2 . . iE"
+    "iCu . . q1 q1"
+    ". iN1 . q1 q1"
+    "iN2 . . a1 a1"
+    ". iS . a1 a1"
+    "q2 q2 q2 w w"
+    "a2 a2 a2 iC iC"
     "q3 q3 g q4 q4"
     "a3 a3 g a4 a4"
     "a5 a5 a5 q5 q5"
     "q6 q6 a6 a6 a6"
     "a7 a7 a7 q7 q7"
+    "b b b b iW"
     "q8 q8 q8 q8 q8 "
-    "a8 . . . ."
-    ". . . q9 a9"
+    "a8 a8 q9 a9 a9"
+    ". . . . iPP"
     "q10 q10 q11 q11 q11"
     "a10 a10 a11 a11 a11"
     ". . q12 a12 a12"
-    "q13 . q12 a12 a12"
-    "q13 . . . ."
-    "q13 a13 a13 a13 a13";
+    "iM . q12 a12 a12"
+    "a13 a13 a13 a13 q13";
+}
+
+.q1:hover,
+.q2:hover,
+.q3:hover {
+  font-size: 2 rem;
+  font-weight: bold;
+}
+
+.q1:hover + .a1 {
+  display: grid;
+}
+
+.start {
+  font-family: "Lekton", monospace;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 
 .h1 {
@@ -110,6 +120,7 @@ body {
   grid-area: q1;
   padding: 60px;
 }
+
 .a1 {
   grid-area: a1;
   padding: 60px;
@@ -117,15 +128,17 @@ body {
 .q2 {
   grid-area: q2;
   padding: 60px;
+  background-color: white;
 }
 .a2 {
   grid-area: a2;
   padding: 60px;
+  background-color: white;
 }
 .q3 {
   grid-area: q3;
-  font-size: 1.3rem;
-  font-weight: bold;
+  /* font-size: 1.3rem;
+  font-weight: bold; */
   padding: 60px;
   background-color: #16a147ff;
 }
@@ -136,8 +149,8 @@ body {
 }
 .q4 {
   grid-area: q4;
-  font-size: 1.3rem;
-  font-weight: bold;
+  /* font-size: 1.3rem;
+  font-weight: bold; */
   padding: 60px;
   background-color: #16a147ff;
 }
@@ -149,31 +162,38 @@ body {
 .q5 {
   grid-area: q5;
   padding: 60px;
+  background-color: white;
 }
 .a5 {
   grid-area: a5;
   padding: 60px;
+  background-color: white;
 }
 .q6 {
   grid-area: q6;
   padding: 60px;
+  background-color: white;
 }
 .a6 {
   grid-area: a6;
   padding: 60px;
+  background-color: white;
 }
 
 .q7 {
   grid-area: q7;
   padding: 60px;
+  background-color: #4596ffff;
 }
 .a7 {
   grid-area: a7;
   padding: 60px;
+  background-color: #4596ffff;
 }
 .q8 {
   grid-area: q8;
   padding: 60px;
+  background-color: #4596ffff;
 }
 .a8 {
   grid-area: a8;
@@ -243,4 +263,37 @@ body {
 
 .ul {
   list-style-type: circle;
+}
+
+.imgSound {
+  grid-area: iS;
+}
+
+.imgEye {
+  grid-area: iE;
+}
+
+.imgClock {
+  grid-area: iC;
+  background-color: white;
+}
+.imgCursor {
+  grid-area: iCu;
+}
+.imgWait {
+  grid-area: iW;
+  background-color: #4596ffff;
+}
+
+.imgMouse {
+  grid-area: iM;
+}
+.imgPlayPause {
+  grid-area: iPP;
+}
+.imgNoot1 {
+  grid-area: iN1;
+}
+.imgNoot2 {
+  grid-area: iN2;
 }
