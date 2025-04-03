@@ -34,7 +34,7 @@ body {
 .newsreader {
   font-family: "Newsreader", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  /* font-weight: <weight>; */
   font-style: normal;
 }
 
