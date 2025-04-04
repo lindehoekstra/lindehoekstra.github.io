@@ -18,6 +18,8 @@ body {
   font-size: 1.6rem;
 }
 
+/* Found font families similair to the ones on the researched website. Regards to the body, I decided to make the font size slighlty bigger than 
+recommended, to fill the page a bit more. Also to make it more readable from a slightly bigger distance from a computer screen */
 .rammetto-one-regular {
   font-family: "Rammetto One", sans-serif;
   font-weight: 400;
@@ -49,22 +51,20 @@ body {
   font-style: italic;
 }
 
+/* To make the background colors go the full width I only implemented a padding, inside each class separtly. I went for the grid template areas,
+to easliy change my components around while I was creating the website. This also made it easy to add or delete certain elements along the way.
+To make sure the elements are all somewhat the same size I added a minimum height and auto width  */
 .grid-container {
-  /* width: 100%; */
   min-height: 500px;
   display: grid;
-  /* padding: 60px; */
-  /* gap: 3rem;
-  margin: 60px; */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
+  /* layout of the website, give each seperate element a place in the grid, only block shapes are aloud, the dot represent an empty space */
     "h1 h1 h1 h1 h1"
     "h2 h2 . . iE"
     "iCu . . q1 q1"
     ". iN1 . q1 q1"
-    /* "iCu iN2 . q1 q1"
-    ". iN1 iS q1 q1" */
     "iN2 . . a1 a1"
     ". iS . a1 a1"
     "q2 q2 q2 w w"
@@ -85,16 +85,21 @@ body {
     "a13 a13 a13 a13 q13";
 }
 
+/* Give the q/a a different font and size */
 .start {
   font-family: "Lekton", monospace;
   font-size: 2rem;
   font-weight: bolder;
 }
 
+/* Make the text dissapear when being hovered on it with the mouse, by turning the opacity to zero. I did this to create a hint on how to find the 
+answers to the questions. Since they appear when you hover over the question */
 #dissapear:hover {
   opacity: 0;
 }
 
+/* In each class used, I gave it a short abbreviation for the grid template area, furthermore I gave some a background color. 
+I gave the seperate elements a background color, since I could not find out how to easily assign each background colour to a certain area (column/row). */
 .h1 {
   font-family: "Rammetto One", sans-serif;
   font-size: 4rem;
@@ -132,8 +137,6 @@ body {
 }
 .q3 {
   grid-area: q3;
-  /* font-size: 1.3rem;
-  font-weight: bold; */
   padding: 60px;
   background-color: #16a147ff;
 }
@@ -144,8 +147,6 @@ body {
 }
 .q4 {
   grid-area: q4;
-  /* font-size: 1.3rem;
-  font-weight: bold; */
   padding: 60px;
   background-color: #16a147ff;
 }
@@ -260,6 +261,7 @@ body {
   list-style-type: circle;
 }
 
+/* Give each image a name for the grid template area, just like all the text. Gave some a background colour, depending on the place in the grid */
 .imgSound {
   grid-area: iS;
 }
@@ -293,6 +295,10 @@ body {
   grid-area: iN2;
 }
 
+/* First I used the function display: none, however, this made my "background" colours look weird when the answer was not on display,
+since I assigned the background colors to the loose grid elements and not a certain row. To still have the effect of the text appearing 
+when the cursor is on the question I made the text change color on hover
+Here I assign each answer text color to its background */
 .a1,
 .a8,
 .a9,
@@ -321,6 +327,7 @@ body {
   color: #4596ffff;
 }
 
+/* When the mouse is on the question the answer will change text color to black to make it visible and thus readable */
 .q1:hover + .a1,
 .q2:hover + .a2,
 .q3:hover + .a3,

@@ -1,3 +1,7 @@
+<!-- This code is written by Linde Hoekstra (s4153614), for the class Interactive Media (OART1013) at RMIT. All the code is written by me
+ with the knowledge and resources obtained during class. I mainly used W3 school for extra help on certain elements (hover, grid area, styling), 
+ and Stackoverflow to import images from a Google Drive folder (https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,15 +18,21 @@
       rel="stylesheet"
     />
   </head>
-  <!-- I used the grid box model. For the layout of the website I took inspiration from the researched website. Having a linear page, 
-   with several sizes of boxes with both pictures and text. -->
+  <!-- I used the grid box model. For the layout of the website I took inspiration from the researched website(https://gehry.getty.edu/). Having a linear page, 
+   with several sizes of boxes with text and other forms of media. I used the same colors as the researched website. Furthermore I decided to make it a bit interactive with a lot of mouse hovering.
+   For the other forms of media I embedded small hand drawn objects in a similair style as the sketches on the researched website (rough and lots of lines) -->
   <body>
+    <!-- I put al the questions and answers in their own class so I can style them separatly. 
+ To create a bit of a distinction between the pieces of text I added a span to make the start of each Q and A a different tex font and size -->
+    <!-- I decided to put breaks in between some of the answers, instead of using different paragraphs with the same class. I wanted them to have the same styling, 
+  and give myself the freedom to easily change my answers while building the website. For readability I put some of my answers in a list property -->
+
     <div class="grid-container">
       <h1 class="h1">A1 - Interactive Experience Research Project</h1>
       <h2 class="h2">
         I chose the website Gehry, sculpting harmony. You can find the website
-        <a href="https://gehry.getty.edu/">here.</a> A project by Linde Hoekstra
-        - S4153614.
+        <a href="https://gehry.getty.edu/">here.</a> A project by Linde
+        Hoekstra.
         <span id="dissapear">
           Trouble finding the answers? Hover over me to get a hint!</span
         >
@@ -172,14 +182,17 @@
         <span class="start">Q9)</span>What other media forms (digital or
         otherwise) does the experience reference?
       </div>
+      <!-- Nested list to create a difference in index -->
       <div class="a9">
+        <span class="start">A9)</span>
         <ul>
-          <span class="start">A9)</span>
           <li>Sketches (paper and digitalized)</li>
-          <li>Architectural models (several materials)</li>
-          <ul>
-            <li>Both in pictures and digitalized to explore</li>
-          </ul>
+          <li>
+            Architectural models (several materials)
+            <ul>
+              <li>Both in pictures and digitalized to explore</li>
+            </ul>
+          </li>
           <li>3D renders</li>
           <li>Video’s</li>
           <li>Photos</li>
@@ -257,11 +270,16 @@
         the building. It ends with a smooth transition into the sketch. Which
         gives it a clear ending.
       </div>
+
+      <!-- I had some trouble dividing my background into several blocks, I ended up giving each grid area a color. Since I am using 'white spaces' as well 
+      I created empty parts to give all the white spaces a different background colour 
+      -->
       <div class="green"></div>
       <div class="white"></div>
       <div class="blue"></div>
       <div class="red"></div>
 
+      <!-- These are all the images that I use, I put them in a public google drive folder, gave them a class namen to easily give it a place in the grid area -->
       <div class="imgMouse">
         <img
           src="https://drive.google.com/thumbnail?id=1WIZv3lhLTMnXeafTFf2F4-57c2Gf1hse"
