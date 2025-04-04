@@ -63,6 +63,8 @@ body {
     "h2 h2 . . iE"
     "iCu . . q1 q1"
     ". iN1 . q1 q1"
+    /* "iCu iN2 . q1 q1"
+    ". iN1 iS q1 q1" */
     "iN2 . . a1 a1"
     ". iS . a1 a1"
     "q2 q2 q2 w w"
@@ -83,21 +85,14 @@ body {
     "a13 a13 a13 a13 q13";
 }
 
-.q1:hover,
-.q2:hover,
-.q3:hover {
-  font-size: 2 rem;
-  font-weight: bold;
-}
-
-.q1:hover + .a1 {
-  display: grid;
-}
-
 .start {
   font-family: "Lekton", monospace;
   font-size: 2rem;
   font-weight: bolder;
+}
+
+#dissapear:hover {
+  opacity: 0;
 }
 
 .h1 {
@@ -296,4 +291,50 @@ body {
 }
 .imgNoot2 {
   grid-area: iN2;
+}
+
+.a1,
+.a8,
+.a9,
+.a12,
+.a13 {
+  color: #ffa441;
+}
+
+.a2,
+.a5,
+.a6 {
+  color: white;
+}
+
+.a10,
+.a11 {
+  color: #ff6359ff;
+}
+
+.a3,
+.a4 {
+  color: #16a147ff;
+}
+
+.a7 {
+  color: #4596ffff;
+}
+
+.q1:hover + .a1,
+.q2:hover + .a2,
+.q3:hover + .a3,
+.q4:hover + .a4,
+.q5:hover + .a5,
+.q6:hover + .a6,
+.q7:hover + .a7,
+.q8:hover + .a8,
+.q9:hover + .a9,
+.q10:hover + .a10,
+.q11:hover + .a11,
+.q11:hover + .a11,
+.q11:hover + .a11,
+.q12:hover + .a12,
+.q13:hover + .a13 {
+  color: black;
 }
