@@ -50,6 +50,17 @@ console.log(myButton);
 const myCat = document.querySelector("#my-cat");
 console.log(myCat);
 
+myCat.addEventListener("mouseenter", addMe);
+myCat.addEventListener("mouseleave", removeMe);
+
+function addMe() {
+  myCat.classList.add("round");
+}
+
+function removeMe() {
+  myCat.classList.remove("round");
+}
+
 myButton.addEventListener("click", handleClick);
 
 function handleClick() {
