@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <script src="script.js" defer></script>
+    <audio
+      src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
+      type="audio/mpeg"
+      id="track1"
+    >
+      Your browser does not support the adio element
+    </audio>
+    <audio
+      src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Dry-Down-feat-Ben-Snaath.mp3"
+      type="audio/mpeg"
+      id="track2"
+    >
+      Your browser does not support the adio element
+    </audio>
+    <audio
+      src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Leapt.mp3"
+      type="audio/mpeg"
+      id="track3"
+    >
+      Your browser does not support the adio element
+    </audio>
+    <audio
+      src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3"
+      type="audio/mpeg"
+      id="track4"
+    >
+      Your browser does not support the adio element
+    </audio>
   </head>
   <body>
     <!-- Header Section -->
@@ -44,7 +72,7 @@
           numquam eligendi?
         </p>
 
-        <!-- Media Player Section showing the track video clip -->
+        <!-- Media Player Section showing the track video clip VERVANGEN VOOR EEN ALBUM FOTO-->
         <div class="media-player">
           <video id="custom-video-player" controls>
             <source
@@ -72,15 +100,34 @@
       </div>
 
       <!-- Additional Content Section -->
-      <!-- full tracklist, when clicking on the track it will start playing -->
+      <!-- full tracklist, when clicking on the track it will start playing, so that is why I chose to add a unordered list
+       Once clicked the page does not need to switch, only the audio, so in the css i will use the styling to give feedback this has been done 
+       in the JS script i made it that on click of that list item the audio will play-->
       <section class="tracklist">
-        <ol>
-          <li>Track x <span class="duration">duration x</span></li>
-          <li>Track y <span class="duration">duration y</span></li>
-          <li>Track z <span class="duration">duration z</span></li>
-          <li>Track a <span class="duration">duration a</span></li>
-        </ol>
+        <ul>
+          <li class="button1">
+            <button id="song">Track x</button
+            ><span id="duration">duration x</span>
+          </li>
+
+          <li class="button2">
+            <button id="song">Track y</button
+            ><span id="duration">duration y</span>
+          </li>
+
+          <li class="button3">
+            <button id="song">Track z</button
+            ><span id="duration">duration z</span>
+          </li>
+
+          <li class="button4">
+            <button id="song">Track a</button
+            ><span id="duration">duration a</span>
+          </li>
+        </ul>
       </section>
+
+      <br />
 
       <section class="album-info">
         <h2>About the album</h2>

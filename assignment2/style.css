@@ -113,7 +113,7 @@ nav a {
 .progress-bar span {
   display: block;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: var(--primary-bg-color);
   width: 0;
   transition: width 0.3s ease;
 }
@@ -124,17 +124,31 @@ nav a {
   width: 100%;
 }
 
-.tracklist ol {
-  /* try to figure out why the numbers of the list are not showing */
-}
-
-.tracklist ol li {
+.tracklist ul li {
   display: flex;
   justify-content: space-between;
 }
 
-.duration {
+#duration {
   text-align: right;
+}
+
+/* get rid of the button its styling to make it look like a normal piece of text */
+#song {
+  background-color: var(--primary-bg-color);
+  border: none;
+  color: var(--text-color);
+}
+
+/* to give feedback that you can click on the song and let it play I want it to underline the song when on hover
+this starts by changing the cursor to a pointer to indicate something can happen there */
+
+.tracklist :hover {
+  cursor: pointer;
+}
+
+.tracklist ul li :hover {
+  text-decoration: underline;
 }
 
 /* Footer styling */
