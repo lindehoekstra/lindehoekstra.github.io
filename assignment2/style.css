@@ -64,9 +64,17 @@ nav a {
   color: var(--text-color);
 }
 
+.lyrics {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  border: #ff0000;
+}
+
 /* Media player styling */
 .media-player {
-  width: 100%;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -110,10 +118,23 @@ nav a {
   transition: width 0.3s ease;
 }
 
-/* tracklist styling */
-#duration {
+/* tracklist styling, i want the duration of each track all the way on the right side*/
+/* so i put space between the elements and put the text on the right */
+.tracklist {
+  width: 100%;
+}
+
+.tracklist ol {
+  /* try to figure out why the numbers of the list are not showing */
+}
+
+.tracklist ol li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.duration {
   text-align: right;
-  color: red;
 }
 
 /* Footer styling */

@@ -11,7 +11,7 @@
   <body>
     <!-- Header Section -->
     <header>
-      <h1>Media Player Website</h1>
+      <h1>Album player</h1>
     </header>
 
     <!-- Navigation Section -->
@@ -26,37 +26,69 @@
     </nav>
 
     <!-- Main Content Section -->
+    <!-- The content is divided into several sections
+     1. the current playing number, showing the lyrics on the side
+     2.  the controls including liked/save button, playback etc
+     3. full tracklist, when you click on a track it will start playing, you can also see the duration
+     4. artist and album information
+     -->
     <main class="container">
-      <!-- Media Player Section -->
-      <div class="media-player">
-        <video id="custom-video-player" controls>
-          <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
-            <img
-              id="play-pause-img"
-              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
-              alt="Play Button"
-              width="24"
-              height="24"
+      <!-- This is the section where you can find the lyrics for the song currently playing 
+       including the video clip of that song on the side. -->
+      <div class="lyrics">
+        <p>
+          The lyrics of the song: sdjfksdhfksj sakjfhkjdshf Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Ratione blanditiis cupiditate
+          exercitationem fuga qui quibusdam modi soluta saepe praesentium
+          officiis unde, odio id, ea error reprehenderit? Reprehenderit saepe
+          numquam eligendi?
+        </p>
+
+        <!-- Media Player Section showing the track video clip -->
+        <div class="media-player">
+          <video id="custom-video-player" controls>
+            <source
+              src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+              type="video/mp4"
             />
-          </button>
-          <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
-            <span id="progress-bar-fill"></span>
+          </video>
+          <!-- section with the controls for the audio -->
+          <div class="custom-controls">
+            <button id="play-pause-btn" onclick="togglePlayPause()">
+              <img
+                id="play-pause-img"
+                src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+                alt="Play Button"
+                width="24"
+                height="24"
+              />
+            </button>
+            <!-- add the missing buttons or functionality here -->
+            <div class="progress-bar">
+              <span id="progress-bar-fill"></span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
+      <!-- full tracklist, when clicking on the track it will start playing -->
+      <section class="tracklist">
+        <ol>
+          <li>Track x <span class="duration">duration x</span></li>
+          <li>Track y <span class="duration">duration y</span></li>
+          <li>Track z <span class="duration">duration z</span></li>
+          <li>Track a <span class="duration">duration a</span></li>
+        </ol>
+      </section>
+
+      <section class="album-info">
+        <h2>About the album</h2>
+        <p>
+          This is where info about the album will be shown, still have to make
+          it up.
+        </p>
+        <p>Where to buy the album blablabla click here to order</p>
       </section>
     </main>
 
