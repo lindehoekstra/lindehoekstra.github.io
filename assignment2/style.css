@@ -1,9 +1,9 @@
 :root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
+  --primary-bg-color: #d7cdd4;
+  --text-color: #2b0f19;
+  --main-bg-color: #6c3059;
   --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
+  --main-btn-bg-color: #aa59a9;
 }
 
 body,
@@ -69,7 +69,6 @@ nav a {
   justify-content: space-between;
   margin: 0 auto;
   padding: 20px;
-  border: #ff0000;
 }
 
 /* Media player styling */
@@ -78,9 +77,13 @@ nav a {
   margin: 0 auto;
 }
 
-.media-player video {
+.media-player img {
   max-width: 100%;
 }
+
+/* .media-player video {
+  max-width: 100%;
+} */
 
 .custom-controls {
   display: flex;

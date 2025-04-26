@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <script src="script.js" defer></script>
+    <!-- store the audio song files, I dont want them to show up as a audio piece, so I put them in the head of the html code.
+     This way I can still work with it in the JS code -->
     <audio
       src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
       type="audio/mpeg"
@@ -35,7 +37,33 @@
     >
       Your browser does not support the adio element
     </audio>
+
+    <!-- https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website -->
+    <!-- <section class="track-picture">
+      <img
+        src="https://drive.google.com/thumbnail?id=1fffHl5ui-qoWoB89Eb2N_nh85CgOBGYU"
+        alt="Track 1 art"
+        id="track1picture"
+      />
+
+      <img
+        src="https://drive.google.com/thumbnail?id=1rXMGDoK2fELe9lhsmXuapzOwWYvrVCkj"
+        alt="Track 2 art"
+        id="track2picture"
+      />
+      <img
+        src="https://drive.google.com/thumbnail?id=1I5UfjzaOTROmpjbWxSLdnkYWIiyQs-i3"
+        alt="Track 3 art"
+        id="track3picture"
+      />
+      <img
+        src="https://drive.google.com/thumbnail?id=1r4v7w4c06idm7NAhrt3N0Fc3V-mRFXCo"
+        alt="Track 4 art"
+        id="track4picture"
+      />
+    </section> -->
   </head>
+
   <body>
     <!-- Header Section -->
     <header>
@@ -43,19 +71,18 @@
     </header>
 
     <!-- Navigation Section -->
-    <nav>
+    <!-- <nav>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Videos</a></li>
         <li><a href="#">Music</a></li>
         <li><a href="#">Playlists</a></li>
-        <!-- Add or remove navigation items as needed -->
       </ul>
-    </nav>
+    </nav> -->
 
     <!-- Main Content Section -->
     <!-- The content is divided into several sections
-     1. the current playing number, showing the lyrics on the side
+     1. the current playing number, showing the lyrics on the side and the song art on the right
      2.  the controls including liked/save button, playback etc
      3. full tracklist, when you click on a track it will start playing, you can also see the duration
      4. artist and album information
@@ -64,24 +91,26 @@
       <!-- This is the section where you can find the lyrics for the song currently playing 
        including the video clip of that song on the side. -->
       <div class="lyrics">
-        <p>
-          The lyrics of the song: sdjfksdhfksj sakjfhkjdshf Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Ratione blanditiis cupiditate
-          exercitationem fuga qui quibusdam modi soluta saepe praesentium
-          officiis unde, odio id, ea error reprehenderit? Reprehenderit saepe
-          numquam eligendi?
-        </p>
+        <div class="lyrics-text">
+          <p>
+            The lyrics of the song: sdjfksdhfksj sakjfhkjdshf Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Ratione blanditiis cupiditate
+            exercitationem fuga qui quibusdam modi soluta saepe praesentium
+            officiis unde, odio id, ea error reprehenderit? Reprehenderit saepe
+            numquam eligendi?
+          </p>
+        </div>
 
         <!-- Media Player Section showing the track video clip VERVANGEN VOOR EEN ALBUM FOTO-->
         <div class="media-player">
-          <video id="custom-video-player" controls>
-            <source
-              src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <img
+            src="https://drive.google.com/thumbnail?id=1fffHl5ui-qoWoB89Eb2N_nh85CgOBGYU"
+            alt="Track 1 art"
+            id="track1picture"
+          />
+
           <!-- section with the controls for the audio -->
-          <div class="custom-controls">
+          <!-- <div class="custom-controls">
             <button id="play-pause-btn" onclick="togglePlayPause()">
               <img
                 id="play-pause-img"
@@ -90,12 +119,13 @@
                 width="24"
                 height="24"
               />
-            </button>
-            <!-- add the missing buttons or functionality here -->
-            <div class="progress-bar">
+            </button> -->
+          <!-- add the missing buttons or functionality here -->
+
+          <!-- <div class="progress-bar">
               <span id="progress-bar-fill"></span>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
 
