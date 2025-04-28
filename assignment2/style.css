@@ -1,3 +1,6 @@
+/* I decided to use the colours of the music art video for the overal styling of the website. This came down to purple and pink hues. I did not change major things about 
+the initial layout. I had more of a focus of creating a cool listening experience */
+
 :root {
   --primary-bg-color: #d7cdd4;
   --text-color: #2b0f19;
@@ -25,8 +28,6 @@ body {
   justify-content: space-between;
 }
 
-/* Add additional styles as needed */
-
 /* Create a container for the main content */
 .container {
   max-width: 1000px;
@@ -38,30 +39,14 @@ body {
 header {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
   width: 100%;
+  font-size: 1.2rem;
 }
 
-/* Navigation styling */
-nav {
-  margin-top: 20px;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
+h2 {
+  font-weight: bold;
 }
 
 .lyrics {
@@ -71,6 +56,7 @@ nav a {
   padding: 20px;
 }
 
+/* give each piece half of the row */
 .lyrics-text,
 .media-player {
   width: 50%;
@@ -82,10 +68,7 @@ nav a {
   margin: 0 auto;
 }
 
-.media-player.img {
-  width: 5%;
-}
-
+/* control buttons styling */
 .custom-controls {
   display: flex;
   justify-content: space-between;
@@ -95,6 +78,7 @@ nav a {
   width: 100%;
 }
 
+/* play pause button styling */
 .custom-controls button {
   background-color: var(--main-btn-bg-color);
   color: var(--main-text-color);
@@ -106,6 +90,7 @@ nav a {
   align-items: center;
 }
 
+/* progress bar styling */
 .progress-bar {
   width: 100%;
   height: 10px;
@@ -122,8 +107,8 @@ nav a {
   transition: width 0.3s ease;
 }
 
-/* tracklist styling, i want the duration of each track all the way on the right side*/
-/* so i put space between the elements and put the text on the right */
+/* tracklist styling, I want the duration of each track all the way on the right side*/
+/* so i put space between the elements and aligned the text on the right */
 .tracklist {
   width: 100%;
 }
@@ -133,10 +118,11 @@ nav a {
   justify-content: space-between;
 }
 
-#duration {
+.time {
   text-align: right;
 }
 
+/* since I connect an audio file to each line of text, I made buttons outs of the list elements. I delete all the regular styling to give the text styling back */
 /* get rid of the button its styling to make it look like a normal piece of text */
 #song {
   background-color: var(--primary-bg-color);

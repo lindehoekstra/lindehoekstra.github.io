@@ -27,18 +27,22 @@ console.log(button3);
 const button4 = document.querySelector(".button4");
 console.log(button4);
 
+// starting picture, which will be changed later
 const beginPic = document.querySelector("#begin-pic");
 console.log(beginPic);
 
-// now we connect the 2 together, once the button is clicked the track starts
-// https://www.reddit.com/r/learnjavascript/comments/mageyv/music_player_help_how_to_pause_and_play_multiple/
-// https://www.w3schools.com/js/js_arrays.asp
-// https://www.w3schools.com/jsref/jsref_foreach.asp
+// I decided to but the buttons and tracks in an array, this way I could easily match the indexes of both together to play the correct audio track
 const album = [track1, track2, track3, track4];
 console.log(album);
 
 const buttons = [button1, button2, button3, button4];
 console.log(buttons);
+
+// I used the link below to link the song pictures to an external drive, in this case I used google drive
+// Since I want to change which picture is showing, and not the position, I put them in an array and change through
+// which element of the array is called out and thus shown
+// the picture are screenshots from the music video from canvas.
+//  https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website -->
 
 const pictures = [
   "https://drive.google.com/thumbnail?id=1fffHl5ui-qoWoB89Eb2N_nh85CgOBGYU",
@@ -66,39 +70,43 @@ dur1.addEventListener("loadedmetadata", function () {
 // var x = document.getElementById("track1").duration;
 // document.getElementById("time1").innerHTML = x;
 
-// click on a track and play the coresponding audio file, make sure the others are paused
+// Connecting the buttons with the tracks, to let the tracks be played.
+// https://www.reddit.com/r/learnjavascript/comments/mageyv/music_player_help_how_to_pause_and_play_multiple/
+// https://www.w3schools.com/js/js_arrays.asp
+// https://www.w3schools.com/jsref/jsref_foreach.asp
+// https://www.geeksforgeeks.org/javascript-set-an-image-source-dynamically-using-js/
+// click on a track and play the coresponding audio file, make sure the others are paused, since you dont want to listen to 3 songs at the same time. I also connected the
+// pictures in this for loop, so if index for the button is x, index x of the pictures is shown.
+
+// to create the loop, I used a for each loop so i could both could loop through the buttons but also the audio array.
 buttons.forEach(function (button, index) {
   button.addEventListener("click", function () {
     album.forEach(function (track, i) {
       if (i === index) {
+        //make sure the index matches up, if it does play the audio
         currentTrack = track;
         console.log(currentTrack);
 
         if (track.paused) {
+          //if the track is paused start playing it again, change the play pause button with the same click
           track.play();
           playPauseImg.src =
             "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
         } else {
+          //if it is playing and clicked the track will go on pause
           track.pause();
           playPauseImg.src =
             "https://img.icons8.com/ios-glyphs/30/play--v1.png";
         }
       } else {
+        // if the button is not clicked make sure it is paused, to only have 1 audio file playing at most, reset from which point the track will start again with the next click
         track.pause();
         track.currentTime = 0;
       }
     });
-    beginPic.src = pictures[index];
+    beginPic.src = pictures[index]; //change out the starting picture/track art for the corresponding piece. This used the same index as album loop
   });
 });
-
-// https://www.geeksforgeeks.org/javascript-set-an-image-source-dynamically-using-js/
-
-// buttons.forEach(function (button, index) {
-//   button.addEventListener("click", function () {
-//     beginPic.src = pictures[index];
-//   });
-// });
 
 // play pause button controls
 const playPauseBtn = document.querySelector("#play-pause-btn");

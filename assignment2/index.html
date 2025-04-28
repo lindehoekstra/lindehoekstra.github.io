@@ -1,3 +1,10 @@
+<!-- For this assignment I decided to focus the projuct on album listening. I took inspiration from Spotify.com and soundcloud.com.
+ I put the focus on making it easy to listen to a track on the album and see the basic information of that track and the whole album. 
+ The feature I added is a tracklist with song times, when clicking on the titel of the song, it will starts playing and a piece of corresponding art is shown. 
+ If the song has lyrics it will be shown on the left of the screen.  -->
+<!-- To create this code I made use of the information available on canvas. W3 school and stack overflow. For certain sections I used more sprecific websites,
+  those websited can be found by their corresponding sections. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +14,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <script src="script.js" defer></script>
+
     <!-- store the audio song files, I dont want them to show up as a audio piece, so I put them in the head of the html code.
-     This way I can still work with it in the JS code -->
+     This way I can still work with it in the JS file to link them to buttons. I use an ID tag to create a difference between each audio tag.-->
     <audio
       src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
       type="audio/mpeg"
@@ -37,8 +45,6 @@
     >
       Your browser does not support the adio element
     </audio>
-
-    <!-- https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website -->
   </head>
 
   <body>
@@ -47,38 +53,22 @@
       <h1>Album player</h1>
     </header>
 
-    <!-- Navigation Section -->
-    <!-- <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Playlists</a></li>
-      </ul>
-    </nav> -->
-
     <!-- Main Content Section -->
     <!-- The content is divided into several sections
      1. the current playing number, showing the lyrics on the side and the song art on the right
-     2.  the controls including liked/save button, playback etc
+     2.  the controls 
      3. full tracklist, when you click on a track it will start playing, you can also see the duration
      4. artist and album information
      -->
     <main class="container">
       <!-- This is the section where you can find the lyrics for the song currently playing 
-       including the video clip of that song on the side. -->
+       including the video/track art of that song on the side. -->
       <div class="lyrics">
         <div class="lyrics-text">
-          <p>
-            The lyrics of the song: sdjfksdhfksj sakjfhkjdshf Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Ratione blanditiis cupiditate
-            exercitationem fuga qui quibusdam modi soluta saepe praesentium
-            officiis unde, odio id, ea error reprehenderit? Reprehenderit saepe
-            numquam eligendi?
-          </p>
+          <p>This song does not have any lyrics.</p>
         </div>
 
-        <!-- Media Player Section showing the track video clip VERVANGEN VOOR EEN ALBUM FOTO-->
+        <!-- Media Player Section showing the track art-->
         <div class="media-player">
           <img
             src="https://drive.google.com/thumbnail?id=1fffHl5ui-qoWoB89Eb2N_nh85CgOBGYU"
@@ -97,62 +87,88 @@
                 height="24"
               />
             </button>
-            <!-- add the missing buttons or functionality here -->
 
+            <!-- progress bar -->
             <div class="progress-bar">
               <span id="progress-bar-fill"></span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Additional Content Section -->
-      <!-- full tracklist, when clicking on the track it will start playing, so that is why I chose to add a unordered list
-       Once clicked the page does not need to switch, only the audio, so in the css i will use the styling to give feedback this has been done 
-       in the JS script i made it that on click of that list item the audio will play-->
+      <!-- Full tracklist, in this section you will find all the tracks. I put them in an unordered list so I could create buttons out of them. Once you click on it
+        the audio file playing will change. I stripped the button of its styling in the css script and gave it functionality in the Javascript file.
+        I gave the buttons a class called time to align the text to the right and this class is used to put the actual duration of the song in there.  -->
       <section class="tracklist">
         <ul>
           <li class="button1">
             <button id="song">Track x</button
-            ><span id="duration" class="time1">duration x</span>
+            ><span class="time">duration x</span>
           </li>
 
           <li class="button2">
             <button id="song">Track y</button
-            ><span id="duration" class="time2">duration y</span>
+            ><span class="time">duration y</span>
           </li>
 
           <li class="button3">
             <button id="song">Track z</button
-            ><span id="duration" class="time3">duration z</span>
+            ><span class="time">duration z</span>
           </li>
 
           <li class="button4">
             <button id="song">Track a</button
-            ><span id="duration" class="time4">duration a</span>
+            ><span class="time">duration a</span>
           </li>
         </ul>
       </section>
 
       <br />
 
+      <!-- Here the additional information about the album is stored.  -->
+
       <section class="album-info">
         <h2>About the album</h2>
         <p>
-          This is where info about the album will be shown, still have to make
-          it up.
+          Purple sounds is an album made by the band Purple. They are a local
+          band from Melbourne, Australia, making music together since 2019.
+          Purple sounds was released in november 2021.
         </p>
-        <p>Where to buy the album blablabla click here to order</p>
+        <p>
+          The album can exlusivly be listened to here on the bands website.
+          Enjoy!
+        </p>
       </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer Section, for credits -->
     <footer>
       <p>&copy; 2024 Media Player Website. All rights reserved.</p>
       <a href="https://icons8.com/icon/59862/play">Play</a> icon by
       <a href="https://icons8.com">Icons8</a>
       <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com">Icons8</a>.
+      <br />
+      <a
+        href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
+        >song 1</a
+      >,
+      <a
+        href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Dry-Down-feat-Ben-Snaath.mp3"
+        >song 2</a
+      >,
+      <a
+        href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Leapt.mp3"
+        >song 3</a
+      >,
+      <a
+        href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3"
+        >song 4</a
+      >, song art through
+      <a
+        href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+        >video art</a
+      >
+      by the longesthumstore.
     </footer>
   </body>
 </html>
