@@ -1,5 +1,3 @@
-// Add other functionalities here
-
 // Once a song button is clicked the corresponding audio file needs to start playing
 // first I need to fetch the audio and buttons before I can connect them
 
@@ -49,48 +47,82 @@ const pictures = [
   "https://drive.google.com/thumbnail?id=1r4v7w4c06idm7NAhrt3N0Fc3V-mRFXCo",
 ];
 
-// play pause button controls
-const playPauseBtn = document.querySelector("#play-pause-btn");
-const playPauseImg = document.querySelector("#play-pause-img");
-const progressBar = document.querySelector("#progress-bar-fill");
-playPauseBtn.addEventListener("click", togglePlayPause);
-Audio.addEventListener("timeupdate", updateProgressBar);
-function togglePlayPause() {
-  if (track.paused || audio.ended) {
-    audio.play();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-  } else {
-    audio.pause();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
-  }
-}
-function updateProgressBar() {
-  const value = (video.currentTime / video.duration) * 100;
-  progressBar.style.width = value + "%";
-}
+let currentTrack = null;
 
 // click on a track and play the coresponding audio file, make sure the others are paused
 buttons.forEach(function (button, index) {
   button.addEventListener("click", function () {
     album.forEach(function (track, i) {
       if (i === index) {
+        currentTrack = track;
+        console.log(currentTrack);
+
         if (track.paused) {
           track.play();
+          playPauseImg.src =
+            "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
         } else {
           track.pause();
+          playPauseImg.src =
+            "https://img.icons8.com/ios-glyphs/30/play--v1.png";
         }
       } else {
         track.pause();
         track.currentTime = 0;
       }
     });
+    beginPic.src = pictures[index];
   });
 });
 
 // https://www.geeksforgeeks.org/javascript-set-an-image-source-dynamically-using-js/
 
-buttons.forEach(function (button, index) {
-  button.addEventListener("click", function () {
-    beginPic.src = pictures[index];
-  });
-});
+// buttons.forEach(function (button, index) {
+//   button.addEventListener("click", function () {
+//     beginPic.src = pictures[index];
+//   });
+// });
+
+// play pause button controls
+const playPauseBtn = document.querySelector("#play-pause-btn");
+console.log(playPauseBtn);
+
+const playPauseImg = document.querySelector("#play-pause-img");
+console.log(playPauseImg);
+
+const progressBar = document.querySelector("#progress-bar-fill");
+console.log(progressBar);
+
+playPauseBtn.addEventListener("click", togglePlayPause);
+
+function togglePlayPause() {
+  if (currentTrack.paused) {
+    // track.play();
+    currentTrack.play();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
+  } else {
+    // track.pause();
+    currentTrack.pause();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
+  }
+}
+
+function togglePlayPause() {
+  if (!currentTrack) {
+    // Als er geen track is geselecteerd, doe niks
+    console.log("no track playing");
+    return;
+  }
+  if (currentTrack.paused) {
+    currentTrack.play();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
+  } else {
+    currentTrack.pause();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
+  }
+}
+
+// function updateProgressBar() {
+//   const value = (video.currentTime / video.duration) * 100;
+//   progressBar.style.width = value + "%";
+// }
