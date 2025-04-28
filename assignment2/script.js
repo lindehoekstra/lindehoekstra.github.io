@@ -49,6 +49,23 @@ const pictures = [
 
 let currentTrack = null;
 
+//change the duration text to the actual duration of the song
+// https://stackoverflow.com/questions/11203773/how-can-i-get-the-html5-audios-duration-time
+// window.onload = function () {
+//   var x = document.getElementById(toString("track1")).duration;
+//   console.log(x);
+//   document.getElementById("duration").innerHTML = x;
+// };
+
+let dur1 = document.getElementById("track1");
+dur1.addEventListener("loadedmetadata", function () {
+  // alert("metadata for audio1 loaded")
+  document.getElementsByClassName("time")[0].innerHTML = dur1;
+});
+
+// var x = document.getElementById("track1").duration;
+// document.getElementById("time1").innerHTML = x;
+
 // click on a track and play the coresponding audio file, make sure the others are paused
 buttons.forEach(function (button, index) {
   button.addEventListener("click", function () {
