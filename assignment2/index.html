@@ -1,6 +1,6 @@
 <!-- For this assignment I decided to focus the projuct on album listening. I took inspiration from Spotify.com and soundcloud.com.
  I put the focus on making it easy to listen to a track on the album and see the basic information of that track and the whole album. 
- The feature I added is a tracklist with song times, when clicking on the titel of the song, it will starts playing and a piece of corresponding art is shown. 
+ The feature I added is a tracklist with song times (duration), when clicking on the titel of the song, it will starts playing and a piece of corresponding art is shown. 
  If the song has lyrics it will be shown on the left of the screen.  -->
 <!-- To create this code I made use of the information available on canvas. W3 school and stack overflow. For certain sections I used more sprecific websites,
   those websited can be found by their corresponding sections. -->
@@ -78,7 +78,7 @@
 
           <!-- section with the controls for the audio -->
           <div class="custom-controls">
-            <button id="play-pause-btn" onclick="togglePlayPause()">
+            <button id="play-pause-btn">
               <img
                 id="play-pause-img"
                 src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
@@ -100,6 +100,7 @@
         I gave the buttons a class called time to align the text to the right and this class is used to put the actual duration of the song in there.  -->
       <section class="tracklist">
         <ul>
+          <li id="bold">Song name: <span>Duratation (min.sec)</span></li>
           <li class="button1">
             <button id="song">Track x</button
             ><span class="time">duration x</span>
@@ -134,7 +135,7 @@
           Purple sounds was released in november 2021.
         </p>
         <p>
-          The album can exlusivly be listened to here on the bands website.
+          The album can exclusively be listened to here on the bands website.
           Enjoy!
         </p>
       </section>

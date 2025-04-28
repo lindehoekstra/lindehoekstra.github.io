@@ -1,5 +1,5 @@
 /* I decided to use the colours of the music art video for the overal styling of the website. This came down to purple and pink hues. I did not change major things about 
-the initial layout. I had more of a focus of creating a cool listening experience */
+the initial layout. I had more of a focus of creating a cool listening experience, where it is easy to listen to all the tracks of the album */
 
 :root {
   --primary-bg-color: #d7cdd4;
@@ -56,16 +56,19 @@ h2 {
   padding: 20px;
 }
 
-/* give each piece half of the row */
-.lyrics-text,
-.media-player {
-  width: 50%;
-}
-
 /* Media player styling */
+/* decided to not make the picture full width, this way you can still see the other features */
 .media-player {
   justify-content: space-between;
   margin: 0 auto;
+  width: 600px;
+  height: auto;
+}
+
+/* resize the image, to make it more visable and part of the listening experience, but not to big to still see the tracklist */
+.media-player img {
+  width: 100%;
+  height: auto;
 }
 
 /* control buttons styling */
@@ -128,6 +131,11 @@ h2 {
   background-color: var(--primary-bg-color);
   border: none;
   color: var(--text-color);
+}
+
+/* easily see what information one will get out of the list */
+#bold {
+  font-weight: bold;
 }
 
 /* to give feedback that you can click on the song and let it play I want it to underline the song when on hover

@@ -6,7 +6,7 @@ const track1 = document.querySelector("#track1");
 console.log(track1);
 
 const track2 = document.querySelector("#track2");
-console.log(track1);
+console.log(track2);
 
 const track3 = document.querySelector("#track3");
 console.log(track3);
@@ -51,42 +51,49 @@ const pictures = [
   "https://drive.google.com/thumbnail?id=1r4v7w4c06idm7NAhrt3N0Fc3V-mRFXCo",
 ];
 
-let currentTrack = null;
-
-//change the duration text to the actual duration of the song
+//change the duration text to the actual duration of the song, for this we first need to load the metadata of the audio file for each song
+// it returns a number in seconds so I round it and change it to minutes and second
 // https://stackoverflow.com/questions/11203773/how-can-i-get-the-html5-audios-duration-time
-// window.onload = function () {
-//   var x = document.getElementById(toString("track1")).duration;
-//   console.log(x);
-//   document.getElementById("duration").innerHTML = x;
-// };
+// https://www.w3schools.com/TAGs/av_event_loadedmetadata.asp
+// https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_innerhtml
+// https://stackoverflow.com/questions/11203773/how-can-i-get-the-html5-audios-duration-time
+// https://www.tutorialspoint.com/How-to-convert-JavaScript-seconds-to-minutes-and-seconds#:~:text=Divide%20the%20total%20seconds%20by,minutes%20to%20round%20down%20it.
 
-let dur1 = document.getElementById("track1");
-dur1.addEventListener("loadedmetadata", function () {
-  // alert("metadata for audio1 loaded")
-  document.getElementsByClassName("time")[0].innerHTML = dur1;
-});
+for (let i = 0; i < album.length; i++) {
+  album[i].onloadedmetadata = function () {
+    let duration = album[i].duration;
+    let minutes = Math.round(duration / 60);
+    let seconds = Math.round(duration % 60);
 
-// var x = document.getElementById("track1").duration;
-// document.getElementById("time1").innerHTML = x;
+    if (seconds < 10) seconds = "0" + seconds;
+
+    document.getElementsByClassName("time")[i].innerHTML =
+      minutes + "." + seconds;
+  };
+}
 
 // Connecting the buttons with the tracks, to let the tracks be played.
 // https://www.reddit.com/r/learnjavascript/comments/mageyv/music_player_help_how_to_pause_and_play_multiple/
 // https://www.w3schools.com/js/js_arrays.asp
 // https://www.w3schools.com/jsref/jsref_foreach.asp
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 // https://www.geeksforgeeks.org/javascript-set-an-image-source-dynamically-using-js/
 // click on a track and play the coresponding audio file, make sure the others are paused, since you dont want to listen to 3 songs at the same time. I also connected the
 // pictures in this for loop, so if index for the button is x, index x of the pictures is shown.
 
 // to create the loop, I used a for each loop so i could both could loop through the buttons but also the audio array.
+
+// next to that I declare a element to store what the current track is. that way The one play/pause butten can
+// play or pause the current playing song. this way it is easily clear on what control to use. instead of keep clicking on the track title
+let currentTrack = null;
+console.log(currentTrack);
+
 buttons.forEach(function (button, index) {
   button.addEventListener("click", function () {
     album.forEach(function (track, i) {
       if (i === index) {
         //make sure the index matches up, if it does play the audio
         currentTrack = track;
-        console.log(currentTrack);
-
         if (track.paused) {
           //if the track is paused start playing it again, change the play pause button with the same click
           track.play();
@@ -105,6 +112,8 @@ buttons.forEach(function (button, index) {
       }
     });
     beginPic.src = pictures[index]; //change out the starting picture/track art for the corresponding piece. This used the same index as album loop
+
+    console.log(currentTrack);
   });
 });
 
@@ -132,22 +141,7 @@ function togglePlayPause() {
   }
 }
 
-function togglePlayPause() {
-  if (!currentTrack) {
-    // Als er geen track is geselecteerd, doe niks
-    console.log("no track playing");
-    return;
-  }
-  if (currentTrack.paused) {
-    currentTrack.play();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-  } else {
-    currentTrack.pause();
-    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
-  }
+function updateProgressBar() {
+  let value = (currentTrack.currentTime / currentTrack.duration) * 100;
+  progressBar.style.width = value + "%";
 }
-
-// function updateProgressBar() {
-//   const value = (video.currentTime / video.duration) * 100;
-//   progressBar.style.width = value + "%";
-// }
