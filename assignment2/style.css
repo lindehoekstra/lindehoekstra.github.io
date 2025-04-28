@@ -43,11 +43,6 @@ header {
   width: 100%;
 }
 
-/* make sure the images are not seen, so i can use them for the rotation in the JS script */
-.track-picture {
-  display: none;
-}
-
 /* Navigation styling */
 nav {
   margin-top: 20px;
@@ -85,6 +80,10 @@ nav a {
 .media-player {
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.media-player.img {
+  width: 5%;
 }
 
 .custom-controls {
