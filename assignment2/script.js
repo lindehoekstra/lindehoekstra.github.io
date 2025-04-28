@@ -1,23 +1,3 @@
-// const video = document.querySelector("#custom-video-player");
-// const playPauseBtn = document.querySelector("#play-pause-btn");
-// const playPauseImg = document.querySelector("#play-pause-img");
-// const progressBar = document.querySelector("#progress-bar-fill");
-// video.removeAttribute("controls");
-// // playPauseBtn.addEventListener("click", togglePlayPause);
-// video.addEventListener("timeupdate", updateProgressBar);
-// function togglePlayPause() {
-//   if (video.paused || video.ended) {
-//     video.play();
-//     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
-//   } else {
-//     video.pause();
-//     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
-//   }
-// }
-// function updateProgressBar() {
-//   const value = (video.currentTime / video.duration) * 100;
-//   progressBar.style.width = value + "%";
-// }
 // Add other functionalities here
 
 // Once a song button is clicked the corresponding audio file needs to start playing
@@ -49,20 +29,7 @@ console.log(button3);
 const button4 = document.querySelector(".button4");
 console.log(button4);
 
-// pictures for each track
-let track1pic = document.querySelector("#track1picture");
-console.log(track1pic);
-
-let track2pic = document.querySelector("#track2picture");
-console.log(track2pic);
-
-let track3pic = document.querySelector("#track3picture");
-console.log(track3pic);
-
-let track4pic = document.querySelector("#track4picture");
-console.log(track4pic);
-
-let beginPic = document.querySelector("#begin-pic");
+const beginPic = document.querySelector("#begin-pic");
 console.log(beginPic);
 
 // now we connect the 2 together, once the button is clicked the track starts
@@ -75,8 +42,32 @@ console.log(album);
 const buttons = [button1, button2, button3, button4];
 console.log(buttons);
 
-let pictures = [track1pic, track2pic, track3pic, track4pic];
-console.log(pictures);
+const pictures = [
+  "https://drive.google.com/thumbnail?id=1fffHl5ui-qoWoB89Eb2N_nh85CgOBGYU",
+  "https://drive.google.com/thumbnail?id=1rXMGDoK2fELe9lhsmXuapzOwWYvrVCkj",
+  "https://drive.google.com/thumbnail?id=1I5UfjzaOTROmpjbWxSLdnkYWIiyQs-i3",
+  "https://drive.google.com/thumbnail?id=1r4v7w4c06idm7NAhrt3N0Fc3V-mRFXCo",
+];
+
+// play pause button controls
+const playPauseBtn = document.querySelector("#play-pause-btn");
+const playPauseImg = document.querySelector("#play-pause-img");
+const progressBar = document.querySelector("#progress-bar-fill");
+playPauseBtn.addEventListener("click", togglePlayPause);
+Audio.addEventListener("timeupdate", updateProgressBar);
+function togglePlayPause() {
+  if (track.paused || audio.ended) {
+    audio.play();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
+  } else {
+    audio.pause();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
+  }
+}
+function updateProgressBar() {
+  const value = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = value + "%";
+}
 
 // click on a track and play the coresponding audio file, make sure the others are paused
 buttons.forEach(function (button, index) {
@@ -96,27 +87,10 @@ buttons.forEach(function (button, index) {
   });
 });
 
-// put the right image in the placeholder image that it starts with
+// https://www.geeksforgeeks.org/javascript-set-an-image-source-dynamically-using-js/
+
 buttons.forEach(function (button, index) {
   button.addEventListener("click", function () {
-    pictures.forEach(function (img, i) {
-      if (i === index) {
-        img.classList.add("active");
-      } else {
-        img.classList.remove("active");
-      }
-    });
+    beginPic.src = pictures[index];
   });
 });
-
-// images[0].classList.add("active")
-
-// for ( const i =0; i<buttons.length; i++){
-// buttons[i].addEventListener("click", function(){
-//   for (let j=0; j<pictures.length;j++){
-//     pictures[j].style.display ="none"
-//   }
-//   if
-// })
-
-// }
