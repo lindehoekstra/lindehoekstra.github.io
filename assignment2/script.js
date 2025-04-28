@@ -108,3 +108,15 @@ buttons.forEach(function (button, index) {
     });
   });
 });
+
+// images[0].classList.add("active")
+
+// for ( const i =0; i<buttons.length; i++){
+// buttons[i].addEventListener("click", function(){
+//   for (let j=0; j<pictures.length;j++){
+//     pictures[j].style.display ="none"
+//   }
+//   if
+// })
+
+// }

@@ -43,6 +43,11 @@ header {
   width: 100%;
 }
 
+/* make sure the images are not seen, so i can use them for the rotation in the JS script */
+.track-picture {
+  display: none;
+}
+
 /* Navigation styling */
 nav {
   margin-top: 20px;
@@ -71,19 +76,16 @@ nav a {
   padding: 20px;
 }
 
+.lyrics-text,
+.media-player {
+  width: 50%;
+}
+
 /* Media player styling */
 .media-player {
   justify-content: space-between;
   margin: 0 auto;
 }
-
-.media-player img {
-  max-width: 100%;
-}
-
-/* .media-player video {
-  max-width: 100%;
-} */
 
 .custom-controls {
   display: flex;
