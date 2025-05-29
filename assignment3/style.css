@@ -99,22 +99,24 @@ body {
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
   margin: 0 auto;
   width: 100vw;
+  height: 100vh;
 }
 
 .container {
-  /* max-width: 100%;
-  width: 100%; */
-  /* padding: 10px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: flex-start; */
   align-items: center;
   margin: 0 auto;
+  flex: 1;
+  /* max-width: 85%; */
+  width: 100%;
+  height: 100vh;
 }
 
 header {
@@ -127,13 +129,65 @@ header {
   font-weight: 500;
 }
 
+.information {
+  padding: 20px;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+.sidebar {
+  /* flex-direction: row; */
+  width: 15%;
+  height: 100vh;
+  border-left: 5px solid var(--text-color);
+  position: relative;
+  padding-left: 10px;
+  background-color: var(--main-detail-color);
+}
+
 .origami {
-  /* width: 100%; */
+  width: auto;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.paper {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
 }
 
 .square {
   width: 350px;
   height: 350px;
-  background-color: var(--front-paper-color);
+  /* background-color: var(--front-paper-color); */
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.square.front {
+  position: absolute;
+  background-color: var(--front-paper-color);
+  backface-visibility: hidden;
+  /* display: block;
+  overflow: hidden; */
+}
+
+.square.back {
+  position: absolute;
+  background-color: var(--back-paper-color);
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.paper.flip {
+  transform: rotateY(180deg);
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,16 +16,24 @@
     <title>Assignment 3</title>
   </head>
   <body>
-    <header>Origami Tutorial</header>
-
     <main class="container">
-      here the main information will go
-      <div class="origami square">css animation here</div>
-      <div class="sidebar">unfold different options for steps, info</div>
-      <div class="player">
-        buttons to replay different steps or go back to a certain step
+      <header>Origami Tutorial</header>
+      <div class="information">
+        In this tutorial you will learn how to creata a heart in just 6 steps!
+        To create a heart with a diameter of 5 cm you will need a paper square
+        of 6.7 by 6.7 cm.
       </div>
+
+      <div class="origami">
+        <div class="paper" draggable="true">
+          <div class="front square">voorkant papier</div>
+          <div class="back square">achterkant papier</div>
+        </div>
+      </div>
+
+      <footer class="player">hier komen de buttons to replay</footer>
     </main>
-    <footer>hier komen de image credits</footer>
+
+    <section class="sidebar">this is the sidebar</section>
   </body>
 </html>
