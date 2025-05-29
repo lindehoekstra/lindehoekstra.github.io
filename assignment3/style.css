@@ -102,12 +102,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 .container {
-  max-width: 100%;
-  width: 100%;
-  padding: 10px;
+  /* max-width: 100%;
+  width: 100%; */
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 header {
@@ -121,7 +128,7 @@ header {
 }
 
 .origami {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .square {
