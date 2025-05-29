@@ -119,3 +119,14 @@ header {
   font-size: 2rem;
   font-weight: 500;
 }
+
+.origami {
+  width: 100%;
+}
+
+.square {
+  width: 350px;
+  height: 350px;
+  background-color: var(--front-paper-color);
+  align-items: center;
+}
