@@ -1,3 +1,17 @@
+/* Fonts used in the website, main font is a handrwitten vibe, for the instructions I also use a more sharp font, since origami is also about
+sharp edges */
+
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+.smooch-sans {
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* try different weights out */
+  font-weight: 100;
+  font-style: normal;
+}
+
 .mali-extralight {
   font-family: "Mali", cursive;
   font-weight: 200;
@@ -68,4 +82,40 @@
   font-family: "Mali", cursive;
   font-weight: 700;
   font-style: italic;
+}
+
+:root {
+  --primary-bg-color: #e0e0e2;
+  --text-color: #0a090c;
+  --main-detail-color: #6a66a3;
+  --front-paper-color: #a62639;
+  --back-paper-color: #ff784f;
+}
+
+body {
+  font-family: "Mali", cursive;
+  font-weight: 300;
+  font-style: normal;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+header {
+  background-color: var(--main-detail-color);
+  width: 100%;
+  color: var(--primary-bg-color);
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
 }
