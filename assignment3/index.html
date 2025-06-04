@@ -1,3 +1,7 @@
+<!-- For this assignment I chose to use CSS animations to create a visual replication of folding origami. With a clear step by step guide a user will be able to follow each step at their own pace. 
+ To approach making this tutorial I made clicking the primary action, to click to a next step, previous step and to flip the paper. In my approach to making the website I build it step by step.
+ Starting with a square as a piece of paper. Giving it a front and back. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,17 +25,31 @@
       <div class="information">
         In this tutorial you will learn how to creata a heart in just 6 steps!
         To create a heart with a diameter of 5 cm you will need a paper square
-        of 6.7 by 6.7 cm.
+        of 6.7 by 6.7 cm. Start by clicking on the circle with 1 to start the
+        turotial.
       </div>
 
       <div class="origami">
         <div class="paper" draggable="true">
           <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div>
+
+          <!-- different circles for each step -->
+          <div class="click-circle" id="cricle1">1</div>
+          <div class="click-circle hidden" id="circle2">2</div>
+          <div class="click-circle hidden" id="circle3">3</div>
+          <div class="click-circle hidden" id="circle4">4</div>
+          <div class="click-circle hidden" id="circle5">5</div>
+          <div class="click-circle hidden" id="circle6">6</div>
+          <div class="click-circle hidden" id="circle7">7</div>
         </div>
       </div>
 
-      <footer class="player">hier komen de buttons to replay</footer>
+      <footer class="player">
+        <button class="control" id="previous">Previous step</button>
+        <button class="control" id="next">Next step</button>
+        <button class="control" id="reset">Reset tutorial</button>
+      </footer>
     </main>
 
     <section class="sidebar">this is the sidebar</section>
