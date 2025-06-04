@@ -6,9 +6,11 @@
 const paper = document.querySelector(".paper");
 console.log(paper);
 
-paper.addEventListener("click", function () {
-  paper.classList.toggle("flip");
-});
+// had this function to make sure the 2 sides of the paper where stuck together
+
+// paper.addEventListener("click", function () {
+//   paper.classList.toggle("flip");
+// });
 
 // buttons from the individual steps
 const step1 = document.querySelector("#circle1");
@@ -46,5 +48,29 @@ console.log(nextButton);
 const resetButton = document.querySelector("#reset");
 console.log(resetButton);
 
+let currentStep = 1;
+console.log(currentStep);
+
+const totalSteps = 7;
+console.log(totalSteps);
+
 // use a for loop to go through all the step buttons
-for (let i = 0; i < steps.length; i++) {}
+// https://www.w3schools.com/tags/att_data-.asp
+steps.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const clickedStep = parseInt(button.dataset.phase);
+    console.log(clickedStep);
+
+    steps.forEach(function (button, index) {
+      const stepNumber = index + 1;
+
+      if (stepNumber == clickedStep && clickedStep == currentStep) {
+        button.classList.add("completed");
+        currentStep++;
+        if (currentStep <= totalSteps) {
+          steps[currentStep - 1].classList.remove("hidden");
+        }
+      }
+    });
+  });
+});
