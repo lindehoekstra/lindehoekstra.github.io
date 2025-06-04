@@ -74,3 +74,22 @@ steps.forEach(function (button) {
     });
   });
 });
+
+prevButton.addEventListener("click", function () {
+  if (currentStep > 1) {
+    currentStep--;
+    console.log(currentStep);
+  }
+});
+
+nextButton.addEventListener("click", function () {
+  if (currentStep > 1) {
+    currentStep++;
+    console.log(currentStep);
+  }
+});
+
+resetButton.addEventListener("click", function () {
+  currentStep = 1;
+  console.log(currentStep);
+});
