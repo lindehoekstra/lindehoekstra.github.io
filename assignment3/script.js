@@ -78,12 +78,19 @@ steps.forEach(function (button) {
 prevButton.addEventListener("click", function () {
   if (currentStep > 1) {
     currentStep--;
+    steps[currentStep].classList.add("hidden");
+    steps[currentStep].classList.remove("completed");
+    if (currentStep > 0) {
+      steps[currentStep - 1].classList.remove("completed");
+    }
     console.log(currentStep);
   }
 });
 
 nextButton.addEventListener("click", function () {
-  if (currentStep > 1) {
+  if (currentStep < totalSteps) {
+    steps[currentStep].classList.remove("hidden");
+    steps[currentStep - 1].classList.add("completed");
     currentStep++;
     console.log(currentStep);
   }
@@ -92,4 +99,12 @@ nextButton.addEventListener("click", function () {
 resetButton.addEventListener("click", function () {
   currentStep = 1;
   console.log(currentStep);
+
+  steps.forEach(function (step, index) {
+    step.classList.remove("completed");
+    step.classList.add("hidden");
+  });
+
+  steps[0].classList.remove("hidden");
+  steps[0].classList.add("active");
 });
