@@ -1,7 +1,5 @@
-/* Fonts used in the website, main font is a handrwitten vibe, for the instructions I also use a more sharp font, since origami is also about
-sharp edges */
-
-/* https://css-tricks.com/svg-path-syntax-illustrated-guide/ */
+/* Fonts used in the website, main font is a handrwitten vibe, for the instructions I also use a more sharp font, since origami itself has a lot of straight edges. 
+creating a clear distinction between what text is tutorial step (sharper font) related and what is general information (handwritten) */
 
 /* <weight>: Use a value from 100 to 900 */
 /* <uniquifier>: Use a unique and descriptive class name */
@@ -86,6 +84,8 @@ sharp edges */
   font-style: italic;
 }
 
+/* the colour palette is simple in the orgin, with pops of color for the details. usign contrasting colours to create a clear distinction between elements, such as front and back of the paper. */
+
 :root {
   --primary-bg-color: #e0e0e2;
   --text-color: #0a090c;
@@ -118,7 +118,6 @@ body {
   align-items: center;
   margin: 0 auto;
   flex: 1;
-  /* max-width: 85%; */
   width: 100%;
   height: 100vh;
 }
@@ -139,6 +138,7 @@ header {
   font-size: 1.05rem;
 }
 
+/* position the side bar on the right side of the screen */
 .sidebar {
   /* flex-direction: row; */
   width: 15%;
@@ -175,11 +175,7 @@ header {
   align-items: center;
   justify-content: center;
   /* cursor: pointer; */
-  /* even uitzetten zodat de focus komt op de stappen en niet het flippen van het papier */
-}
-
-.square:click {
-  rotate: 30deg;
+  /* Disabled the cursor so I can focus on the circles buttons for each step, not the whole piece of paper */
 }
 
 .square.front {
@@ -199,7 +195,6 @@ header {
   rotate: y 180deg;
 }
 
-/* uitzoeken hoe ik ruimte krijg tussen de buttons */
 .player {
   padding-top: 20px;
   width: 100%;
@@ -216,6 +211,7 @@ header {
   margin-right: 15px;
 }
 
+/* change the size and color when hovering over it, to make it more clear you can click it */
 .control:hover {
   scale: 1.2;
   transition: scale 0.4s ease;
@@ -225,7 +221,8 @@ header {
   color: #0a090c;
 }
 
-/* i am using position absolute to easily identify where in the square box I need each step to start */
+/* I am using position absolute to easily identify where in the square box I need each step to start. Each circle button has the same style but a different position, 
+so I use the ID element to change position of each button, this way I could first ensure they work how I want to, and later perfect to positioning of each button within the container*/
 
 .click-circle {
   position: absolute;
@@ -244,21 +241,25 @@ header {
   font-size: 1.4rem;
 }
 
+/* same colour and scale transition as the footer buttons, to create a consitency, making it more clear these are also buttons you can click  */
 .click-circle:hover {
   background-color: var(--circle-color2);
   border: none;
   scale: 1.2;
 }
 
+/* track easily on which step you are, without having to read each button, you go to the button with a different colour. Giving the user feedback they have completed a step online */
 .click-circle.completed {
   background-color: var(--main-detail-color);
   color: var(--primary-bg-color);
 }
 
+/* hide the buttons at the beginning of the tutorial */
 .click-circle.hidden {
   display: none;
 }
 
+/* positioning each circle to where the step starts */
 #circle1 {
   top: 20px;
   right: 20px;
@@ -294,27 +295,10 @@ header {
   left: 20px;
 }
 
-.fold {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ffeac1;
-  transform-origin: bottom right;
-  transform: rotateX(0deg);
-  transition: transform 1s ease, z-index 0s linear 1s;
-  z-index: 1;
-}
-
-.fold1 {
-  clip-path: polygon(0% 66%, 100% 33%, 100% 100%, 0% 100%);
-  transform-origin: top left;
-}
-
-.fold.folded {
-  transform: rotateX(-180deg);
-  z-index: 0;
-  transition: transform 1s ease, z-index 0s linear 0s;
-}
+/* I created my own SVG paths using the following websites */
+/* https://css-tricks.com/svg-path-syntax-illustrated-guide/ */
+/* https://pompeu.neocities.org/p5/svg/genera/ */
+/* Using position absolute again, to position it the same way as the circle buttons, using no mouse pointer, to lead people more to the circle buttons */
 
 #origami-svg {
   position: absolute;
@@ -322,6 +306,5 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* zodat het klikken op circles nog werkt */
-  z-index: 2; /* boven het papier, maar onder knoppen */
+  pointer-events: none;
 }

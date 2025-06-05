@@ -1,6 +1,6 @@
 // for the orgimani I chose a simple tutorial with minimal steps
 //  the tutorial I chose to replicate with my application is the following video: https://www.youtube.com/watch?v=PlebdXZRqP0
-// It is a tutorial for a paper heart
+// It is a tutorial for a paper heart,
 
 // flip the paper to front and back
 const paper = document.querySelector(".paper");
@@ -11,6 +11,8 @@ console.log(paper);
 // paper.addEventListener("click", function () {
 //   paper.classList.toggle("flip");
 // });
+
+// I start by calling all the objects I later need in my function to connect the SVG's and buttons to each other
 
 // buttons from the individual steps
 const step1 = document.querySelector("#circle1");
@@ -48,6 +50,7 @@ console.log(nextButton);
 const resetButton = document.querySelector("#reset");
 console.log(resetButton);
 
+// need an element to keep track of where in the tutorial the user is.
 let currentStep = 1;
 console.log(currentStep);
 
@@ -57,7 +60,7 @@ console.log(totalSteps);
 const path = document.querySelector("#fold-path");
 console.log(path);
 
-// met de paths
+// Put all the paths in an array
 const paths = [
   "M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z",
   "M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z",
@@ -69,6 +72,12 @@ const paths = [
 
 // use a for loop to go through all the step buttons
 // https://www.w3schools.com/tags/att_data-.asp
+
+//I used a for loop to go through all the circle buttons, using the data marker to keep track on which step the user is and what button has been clicked (https://www.w3schools.com/tags/att_data-.asp, used this specific source to create the data tag).
+// I used the same setup and logic as I used for assignment 2, and applied it to this scenario.
+// The loop reads which button has been clicked, 1 is added to the number (to account for an array starting at 0, and my counting in the html at 1), this number compared to make sure it is the newest step
+// If that is the case the button gets marked as complete and the next one is revealed. At the same time, the path gets replaced, and thus the animation gets updated.
+
 steps.forEach(function (button) {
   button.addEventListener("click", function () {
     const clickedStep = parseInt(button.dataset.phase);
@@ -80,13 +89,18 @@ steps.forEach(function (button) {
       if (stepNumber == clickedStep && clickedStep == currentStep) {
         button.classList.add("completed");
         currentStep++;
+        path.setAttribute("d", paths[currentStep]);
         if (currentStep <= totalSteps) {
           steps[currentStep - 1].classList.remove("hidden");
+          path.setAttribute("d", paths[currentStep]);
         }
       }
     });
   });
 });
+
+// For the buttons in the footer I used a similair logic as above. the number of current step is lowered of highered (depending on the button) and the state of the previous/next button is switched,
+// just like the path that gets updated. For the reset button everthing is hidden again, except for the first button in the array.
 
 prevButton.addEventListener("click", function () {
   if (currentStep > 1) {
@@ -125,12 +139,3 @@ resetButton.addEventListener("click", function () {
   steps[0].classList.add("active");
   path.setAttribute("d", paths[0]);
 });
-
-// const fold = document.getElementById(id);
-// console.log(fold);
-
-function toggleFold(id) {
-  const fold = document.getElementById(id);
-  console.log(fold);
-  fold.classList.toggle("folded");
-}

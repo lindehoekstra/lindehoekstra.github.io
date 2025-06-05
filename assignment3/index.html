@@ -1,6 +1,8 @@
-<!-- For this assignment I chose to use CSS animations to create a visual replication of folding origami. With a clear step by step guide a user will be able to follow each step at their own pace. 
- To approach making this tutorial I made clicking the primary action, to click to a next step, previous step and to flip the paper. In my approach to making the website I build it step by step.
- Starting with a square as a piece of paper. Giving it a front and back. -->
+<!-- For this assignment I chose to use the action of clicking to create a visual replication of folding origami. With a clear step by step guide a user will be able to follow each step at their own pace. 
+ To approach making this tutorial I made clicking the primary action, to click to a next step, previous step and to reset the tutorial. Giving the freedom to approach the origami at ones own pace. In my approach to making the website I build it step by step.
+ Starting with a square as a piece of paper. Giving it a front and back. To this i added several buttons on top of it, one for each step of the tutorial. Giving these buttons seperate visual states for hover, done and not done. Next step was to connect these buttons to the 
+ buttons in the footer. Next, previous and reset. The biggest challenge was to create a changing shape, origami has distict shapes in the proces. I tried several approaches; clip-path, flip, transform. 
+ Unfortunatly none of these worked the way I inted it to look. I ended up choosing SVG paths, creating my own paths. each path connected to a new step.-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +21,16 @@
     />
     <title>Assignment 3</title>
   </head>
+
+  <!-- For the setup of my interactive webpage I used a main class in which I have 4 subclasses
+ 1. header, title of the webpage
+ 2. origami, contains the paper and step by step buttons
+ 3. footer, contains the control buttons
+ 4. information, basic information about the tutorial
+
+ outside of the main container I have a side bar. In the side bar, a written description can be found of all the steps
+  -->
+
   <body>
     <main class="container">
       <header>Origami Tutorial</header>
@@ -31,10 +43,11 @@
 
       <div class="origami">
         <div class="paper" draggable="true">
+          <!-- I started by 'glueing' 2 squares together as the paper, I later realized I could not manipulate this shape the way I wanted to, so I ended up not using this. Instead I 
+ used a SVG box in which I change the path -->
+
           <!-- <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div> -->
-
-          <!-- <div class="fold fold1" id="fold1"></div> -->
 
           <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
             <path
@@ -46,16 +59,9 @@
             />
           </svg>
 
-          <!-- different circles for each step -->
+          <!-- different circles for each step, hide everything except for the first one, to declutter the start, making it better to see where to start -->
 
-          <div
-            class="click-circle"
-            id="circle1"
-            data-phase="1"
-            onclick="toggleFold('fold1')"
-          >
-            1
-          </div>
+          <div class="click-circle" id="circle1" data-phase="1">1</div>
           <div class="click-circle hidden" id="circle2" data-phase="2">2</div>
           <div class="click-circle hidden" id="circle3" data-phase="3">3</div>
           <div class="click-circle hidden" id="circle4" data-phase="4">4</div>
@@ -74,12 +80,16 @@
         </div>
       </div>
 
+      <!-- buttons to control the tutorial -->
+
       <footer class="player">
         <button class="control" id="previous">Previous step</button>
         <button class="control" id="next">Next step</button>
         <button class="control" id="reset">Reset tutorial</button>
       </footer>
     </main>
+
+    <!-- step by step written text, supporting the visual changes for each step -->
 
     <section class="sidebar">this is the sidebar</section>
   </body>
