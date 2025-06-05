@@ -108,3 +108,12 @@ resetButton.addEventListener("click", function () {
   steps[0].classList.remove("hidden");
   steps[0].classList.add("active");
 });
+
+// const fold = document.getElementById(id);
+// console.log(fold);
+
+function toggleFold(id) {
+  const fold = document.getElementById(id);
+  console.log(fold);
+  fold.classList.toggle("folded");
+}

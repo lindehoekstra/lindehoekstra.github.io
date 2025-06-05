@@ -33,10 +33,18 @@
         <div class="paper" draggable="true">
           <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div>
+          <div class="fold fold1" id="fold1"></div>
 
           <!-- different circles for each step -->
 
-          <div class="click-circle" id="circle1" data-phase="1">1</div>
+          <div
+            class="click-circle"
+            id="circle1"
+            data-phase="1"
+            onclick="toggleFold('fold1')"
+          >
+            1
+          </div>
           <div class="click-circle hidden" id="circle2" data-phase="2">2</div>
           <div class="click-circle hidden" id="circle3" data-phase="3">3</div>
           <div class="click-circle hidden" id="circle4" data-phase="4">4</div>
