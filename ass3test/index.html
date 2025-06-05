@@ -77,7 +77,9 @@
     </style>
   </head>
   <body>
-    <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
+    <!-- oude path, nog even bewarden omdat ik nog niet alles nu goed heb -->
+
+    <!-- <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
       <path
         id="fold-path"
         d="M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z"
@@ -85,11 +87,171 @@
         stroke="#ff0000"
         stroke-width="2"
       />
+    </svg> -->
+
+    <!-- vierkant rood -->
+
+    <svg
+      class="shape"
+      viewBox="0 0 350 350"
+      class="svg-1"
+      id="origami-svg"
+      width="350"
+      height="350"
+    >
+      <path
+        d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg>
+
+    <!-- vorm compleet rood na vouw, met de 4 3hoekjes -->
+    <!--     
+    <svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 55.9 271.6 
+           L 343.3 136.3 
+           L 344.9 51.1 
+           L 261.8 48.9 
+           L 196.7 0 
+           L 149.1 53.3 
+           L 62.6 54.5 
+           L 62.2 153.1 
+           L 0 213.1 
+           L 58.8 271.2 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg> -->
+
+    <!-- oranje vorm na 1ste vouw -->
+
+    <!-- <svg
+      width="350"
+      height="350"
+      viewBox="0 0 350 350"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M 54.87 274.58 
+           L 349.50 141.51 
+           L 195.81 0 
+           L 0 217.12 
+           L 54.99 272.30 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+    </svg> -->
+
+    <!-- vorm oranje en rood samen, na vouw  1 -->
+
+    <svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 55.9 271.6 
+           L 343.3 136.3 
+           L 343.3 51.1 
+           L 252.1 51.1 
+           L 196.7 0 
+           L 149.1 53.3 
+           L 62.6 53.3 
+           L 62.6 153.3 
+           L 0 213.1 
+           L 58.8 271.2 
+           Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+      <path
+        d="M 55.9 271.6 
+           L 343.30 136.3 
+           L 196.7 0 
+           L 0 213.1 
+           L 53.3 271.2
+           Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+    </svg>
+
+    <!-- oranje vorm na dubbel vouw -->
+
+    <!-- <svg
+      width="350"
+      height="350"
+      viewBox="0 0 350 350"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M 86.89 349.99 
+       L 338.36 233.57 
+       L 239.07 0 
+       L 93.36 0.72 
+       L 100.63 134.40 
+       L 0 263.73 
+       L 87.61 349.27 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+    </svg> -->
+
+    <!-- rode hoekje na dubbel vouw -->
+
+    <!-- <svg
+      width="350"
+      height="350"
+      viewBox="0 0 350 350"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+     
+      <path
+        d="M 241.10 0.72 
+       L 93.36 2.16 
+       L 98.57 134.40 
+       L 239.07 0.72 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg> -->
+
+    <!-- vorm samen na dubbel vouw, aka praktisch het hartje -->
+
+    <svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 86.89 349.99 
+       L 338.36 233.57 
+       L 239.07 0 
+       L 93.36 0.72 
+       L 100.63 134.40 
+       L 0 263.73 
+       L 87.61 349.27 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+      <path
+        d="M 241.10 0.72 
+       L 93.36 2.16 
+       L 98.57 134.40 
+       L 239.07 0.72 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
     </svg>
 
     <button id="next-btn">Volgende vouw</button>
 
     <script>
+      const svg = [];
+
       const path = document.getElementById("fold-path");
       const button = document.getElementById("next-btn");
 
@@ -110,3 +272,71 @@
     </script>
   </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="svg-container"></div>
+    <button id="next">Volgende stap</button>
+
+    <script>
+      const svgs = [
+        `<svg viewBox="0 0 350 350">
+     < <path
+        d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+   </svg>`,
+        `<svg viewBox="0 0 350 350">
+     <path
+        d="M 55.9 271.6 
+           L 343.3 136.3 
+           L 343.3 51.1 
+           L 252.1 51.1 
+           L 196.7 0 
+           L 149.1 53.3 
+           L 62.6 53.3 
+           L 62.6 153.3 
+           L 0 213.1 
+           L 58.8 271.2 
+           Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+     <path
+        d="M 55.9 271.6 
+           L 343.30 136.3 
+           L 196.7 0 
+           L 0 213.1 
+           L 53.3 271.2
+           Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+   </svg>`,
+      ];
+
+      let current = 0;
+      const container = document.getElementById("svg-container");
+      const button = document.getElementById("next");
+
+      button.addEventListener("click", () => {
+        current = (current + 1) % svgs.length;
+        container.innerHTML = svgs[current];
+      });
+
+      // Initieel SVG tonen
+      container.innerHTML = svgs[0];
+    </script>
+  </body>
+</html>
+ -->

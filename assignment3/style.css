@@ -308,3 +308,7 @@ so I use the ID element to change position of each button, this way I could firs
   height: 100%;
   pointer-events: none;
 }
+
+.svg.hidden {
+  display: none;
+}

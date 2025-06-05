@@ -42,14 +42,23 @@
       </div>
 
       <div class="origami">
-        <div class="paper" draggable="true">
+        <div class="paper" draggable="true" id="svg-container">
+          <svg viewBox="0 0 350 350" class="svg-1" id="origami-svg">
+            <path
+              d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
+              fill="#a62639"
+              stroke="#a62639"
+              stroke-width="2"
+            />
+          </svg>
+
           <!-- I started by 'glueing' 2 squares together as the paper, I later realized I could not manipulate this shape the way I wanted to, so I ended up not using this. Instead I 
  used a SVG box in which I change the path -->
 
           <!-- <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div> -->
 
-          <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
+          <!-- <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
             <path
               id="fold-path"
               d="M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z"
@@ -57,7 +66,18 @@
               stroke="#ff0000"
               stroke-width="2"
             />
-          </svg>
+          </svg> -->
+
+          <!-- Good looking SVG!! -->
+
+          <!-- <svg viewBox="0 0 350 350" class="svg-1" id="origami-svg">
+            <path
+              d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
+              fill="#a62639"
+              stroke="#a62639"
+              stroke-width="2"
+            />
+          </svg> -->
 
           <!-- different circles for each step, hide everything except for the first one, to declutter the start, making it better to see where to start -->
 
