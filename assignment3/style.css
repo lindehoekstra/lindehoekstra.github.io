@@ -1,6 +1,8 @@
 /* Fonts used in the website, main font is a handrwitten vibe, for the instructions I also use a more sharp font, since origami is also about
 sharp edges */
 
+/* https://css-tricks.com/svg-path-syntax-illustrated-guide/ */
+
 /* <weight>: Use a value from 100 to 900 */
 /* <uniquifier>: Use a unique and descriptive class name */
 
@@ -312,4 +314,14 @@ header {
   transform: rotateX(-180deg);
   z-index: 0;
   transition: transform 1s ease, z-index 0s linear 0s;
+}
+
+#origami-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* zodat het klikken op circles nog werkt */
+  z-index: 2; /* boven het papier, maar onder knoppen */
 }
