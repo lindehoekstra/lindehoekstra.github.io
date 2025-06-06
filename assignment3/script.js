@@ -66,6 +66,10 @@ console.log(totalSteps);
 const path = document.querySelector("#fold-path");
 console.log(path);
 
+// sound for the buttons
+const sound = document.querySelector("#sound");
+console.log(sound);
+
 // call up all the svg paths and put them in an array
 
 const svgs = [
@@ -190,7 +194,7 @@ const stepInstruction = [
   `<p> <h2>Step 3:</h2><br>Fold the shape in half, placing the triangles on top of each other, you will see the heart shape appearing.</p>`,
   `<p> <h2>Step 4:</h2><br>Round off the shape by folding the top corners of the heart down, try to make them as similair as possible. Make sure you fold both layers.</p>`,
   `<p> <h2>Step 5:</h2><br>Round off the shape more by folding the side corners of the heart down, make them as similair to each other as you can</p>`,
-  `<p> <h1>Done!!</h1></p>`,
+  `<p> <h2>Done!!</h2>Congratulations, you made a origami heart!</p>`,
 ];
 
 // Put all the paths in an array (old code)
@@ -211,7 +215,11 @@ const stepInstruction = [
 // The loop reads which button has been clicked, 1 is added to the number (to account for an array starting at 0, and my counting in the html at 1), this number compared to make sure it is the newest step
 // If that is the case the button gets marked as complete and the next one is revealed. At the same time, the path gets replaced, and thus the animation gets updated.
 // Since I am replacing the whole svg box i have to update the display so the circles are added back in
-// next to that the last stap will rotate the shape so the heart is straight
+// next to that the last stap will rotate the shape so the heart is straight.
+// Unfortunatly there is a little bug in my code, the previous and next button are not 100% functioning like I envisioned. Once you click through to the end of the tutorial and then use the previous button, the circes are not displayed correctly.
+// If you use the button before step 4, it works like I inteded to.
+// If you just use the next button to go through the tutorial, it seems to skip a step in the end.
+// Using the number circles does work correctly
 
 function updateDisplay() {
   container.innerHTML = svgs[currentStep - 1];
@@ -224,6 +232,7 @@ function updateDisplay() {
 
 steps.forEach(function (button) {
   button.addEventListener("click", function () {
+    sound.play();
     const clickedStep = parseInt(button.dataset.phase);
     console.log(clickedStep);
 
@@ -321,21 +330,3 @@ resetButton.addEventListener("click", function () {
 });
 
 updateDisplay();
-
-// resetButton.addEventListener("click", function () {
-//   currentStep = 1;
-//   console.log(currentStep);
-
-//   steps.forEach(function (step, index) {
-//     step.classList.remove("completed");
-//     step.classList.add("hidden");
-//     // path.setAttribute("d", paths[currentStep]);
-//     // container.innerHTML = svgs[currentStep];
-
-//   });
-
-//   steps[0].classList.remove("hidden");
-//   steps[0].classList.add("completed");
-//   // path.setAttribute("d", paths[0]);
-//   container.innerHTML = svgs[0];
-// });

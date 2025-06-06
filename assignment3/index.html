@@ -2,7 +2,7 @@
  To approach making this tutorial I made clicking the primary action, to click to a next step, previous step and to reset the tutorial. Giving the freedom to approach the origami at ones own pace. In my approach to making the website I build it step by step.
  Starting with a square as a piece of paper. Giving it a front and back. To this i added several buttons on top of it, one for each step of the tutorial. Giving these buttons seperate visual states for hover, done and not done. Next step was to connect these buttons to the 
  buttons in the footer. Next, previous and reset. The biggest challenge was to create a changing shape, origami has distict shapes in the proces. I tried several approaches; clip-path, flip, transform. 
- Unfortunatly none of these worked the way I inted it to look. I ended up choosing SVG paths, creating my own paths. each path connected to a new step.-->
+ Unfortunatly none of these worked the way I inted it to look. I ended up choosing SVG paths, creating my own paths. each paths connected to a new step. I loop trough an array of SVG viewboxes to change the visuals-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
     <main class="container">
       <header>Origami Tutorial</header>
       <div class="information">
-        In this tutorial you will learn how to create a heart in just 6 steps!
+        In this tutorial you will learn how to create a heart in just 5 steps!
         To create a heart with a diameter of 5 cm you will need a paper square
         of 6.7 by 6.7 cm. Start by clicking on the circle with 1 to start the
         tutorial.
@@ -58,16 +58,8 @@
           <!-- <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div> -->
 
-          <!-- <svg viewBox="0 0 1600 738" class="svg-1" id="origami-svg">
-            <path
-              id="fold-path"
-              d="M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z"
-              fill="none"
-              stroke="#ff0000"
-              stroke-width="2"
-            />
-          </svg> -->
-
+          <!-- audio source for the buttons -->
+          <audio src="mixkit-paper-slide-1530.wav" id="sound">Your browser does not support this file</audio>
           <!-- different circles for each step, hide everything except for the first one, to declutter the start, making it better to see where to start -->
 
           <div class="click-circle" id="circle1" data-phase="1">1</div>
@@ -77,15 +69,6 @@
           <div class="click-circle hidden" id="circle5" data-phase="5">5</div>
           <!-- <div class="click-circle hidden" id="circle6" data-phase="6">6</div>
           <div class="click-circle hidden" id="circle7" data-phase="7">7</div> -->
-
-          <!-- use this to test the positions of the circles -->
-          <!-- <div class="click-circle" id="circle1">1</div>
-          <div class="click-circle" id="circle2">2</div>
-          <div class="click-circle" id="circle3">3</div>
-          <div class="click-circle" id="circle4">4</div>
-          <div class="click-circle" id="circle5">5</div>
-          <div class="click-circle" id="circle6">6</div>
-          <div class="click-circle" id="circle7">7</div> -->
         </div>
       </div>
 
@@ -106,6 +89,7 @@
       <div class="step-text">
         <p> <h2>Step 1:</h2><br>Start with a squared piece of paper. Put the preffered colour of your heart side down.</p>
       </div>
+      <div class="reference">sound by <a href="https://mixkit.co/free-sound-effects/paper/">Mixkit</a></div>
     </section>
   </body>
 </html>
