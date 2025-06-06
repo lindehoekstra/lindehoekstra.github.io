@@ -37,7 +37,10 @@ const step7 = document.querySelector("#circle7");
 console.log(step7);
 
 // put all the step buttons in an array
-const steps = [step1, step2, step3, step4, step5, step6, step7];
+// const steps = [step1, step2, step3, step4, step5, step6, step7];
+// console.log(steps);
+
+const steps = [step1, step2, step3, step4, step5];
 console.log(steps);
 
 // Buttons from the footer
@@ -54,7 +57,10 @@ console.log(resetButton);
 let currentStep = 1;
 console.log(currentStep);
 
-const totalSteps = 7;
+// const totalSteps = 7;
+// console.log(totalSteps);
+
+const totalSteps = 5;
 console.log(totalSteps);
 
 const path = document.querySelector("#fold-path");
@@ -63,14 +69,21 @@ console.log(path);
 // call up all the svg paths and put them in an array
 
 const svgs = [
-  `<svg viewBox="0 0 350 350" class="svg-1" id="origami-svg">
-            <path
-              d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
-              fill="#a62639"
-              stroke="#a62639"
-              stroke-width="2"
-            />
-          </svg>`,
+  `<svg
+      class="shape"
+      viewBox="0 0 350 350"
+      class="svg-1"
+      id="origami-svg"
+      width="350"
+      height="350"
+    >
+      <path
+        d="M 0 0 L 350 0 L 350 350 L 0 350 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg>`,
   `<svg width="350" height="350" viewBox="0 0 350 350">
       <path
         d="M 55.9 271.6 
@@ -100,11 +113,7 @@ const svgs = [
         stroke-width="2"
       />
     </svg>`,
-  `<svg
-      width="350"
-      height="350"
-      viewBox="0 0 350 350"
-    >
+  `<svg width="350" height="350" viewBox="0 0 350 350">
       <path
         d="M 86.89 349.99 
        L 338.36 233.57 
@@ -127,11 +136,64 @@ const svgs = [
         stroke-width="2"
       />
     </svg>`,
+  `<svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 86.89 349.99 L 338.36 233.57 L 239.07 0 L 162 75 L 100.63 134.4 L 15 232 L 15 262 L 87.61 349.27 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+      <path
+        d="M 241.1 0.72 L 129 18 L 104 44 L 100 135 L 239.07 0.72 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg>`,
+  ` <svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 86.89 349.99 L 338.36 233.57 L 237 13 L 230 8 L 162 75 L 100.63 134.4 L 15 232 L 15 262 L 68 347 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+      <path
+        d="M 223 4 L 129 18 L 104 44 L 100 135 L 230 8 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg>`,
+  ` <svg width="350" height="350" viewBox="0 0 350 350">
+      <path
+        d="M 86.89 349.99 L 338.36 233.57 L 237 13 L 230 8 L 162 75 L 100.63 134.4 L 15 232 L 15 262 L 68 347 Z"
+        fill="#ff784f"
+        stroke="#ff784f"
+        stroke-width="2"
+      />
+      <path
+        d="M 223 4 L 129 18 L 104 44 L 100 135 L 230 8 Z"
+        fill="#a62639"
+        stroke="#a62639"
+        stroke-width="2"
+      />
+    </svg>`,
 ];
 
 const container = document.querySelector("#svg-container");
 
-// Put all the paths in an array
+const stepText = document.querySelector(".step-text");
+
+const stepInstruction = [
+  `<p> <h2>Step 1:</h2><br>Start with a squared piece of paper. Put the preffered colour of your heart side down.</p>`,
+  `<p> <h2>Step 2:</h2><br>Fold the bottom right corner up. There is no exact reference, try to create 4 similair sized traingles.</p>`,
+  `<p> <h2>Step 3:</h2><br>Fold the shape in half, placing the triangles on top of each other, you will see the heart shape appearing.</p>`,
+  `<p> <h2>Step 4:</h2><br>Round off the shape by folding the top corners of the heart down, try to make them as similair as possible. Make sure you fold both layers.</p>`,
+  `<p> <h2>Step 5:</h2><br>Round off the shape more by folding the side corners of the heart down, make them as similair to each other as you can</p>`,
+  `<p> <h1>Done!!</h1></p>`,
+];
+
+// Put all the paths in an array (old code)
 // const paths = [
 //   "M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z",
 //   "M 437.19999980926514 676.7750015258789 L 995.1999998092651 665.7750015258789 L 972.1999998092651 150.7750015258789 L 452.19999980926514 148.77499771118164 L 435.19999980926514 675.7750015258789 Z",
@@ -148,6 +210,17 @@ const container = document.querySelector("#svg-container");
 // I used the same setup and logic as I used for assignment 2, and applied it to this scenario.
 // The loop reads which button has been clicked, 1 is added to the number (to account for an array starting at 0, and my counting in the html at 1), this number compared to make sure it is the newest step
 // If that is the case the button gets marked as complete and the next one is revealed. At the same time, the path gets replaced, and thus the animation gets updated.
+// Since I am replacing the whole svg box i have to update the display so the circles are added back in
+// next to that the last stap will rotate the shape so the heart is straight
+
+function updateDisplay() {
+  container.innerHTML = svgs[currentStep - 1];
+
+  steps.forEach(function (step, index) {
+    container.appendChild(step);
+  });
+  stepText.innerHTML = stepInstruction[currentStep - 1];
+}
 
 steps.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -157,16 +230,26 @@ steps.forEach(function (button) {
     steps.forEach(function (button, index) {
       const stepNumber = index + 1;
 
+      if (clickedStep == 5) {
+        paper.style.transform = "rotateZ(67deg)";
+        steps.forEach(function (step) {
+          if (step) {
+            step.classList.add("hidden");
+          }
+        });
+      }
+
       if (stepNumber == clickedStep && clickedStep == currentStep) {
         button.classList.add("completed");
         currentStep++;
         // path.setAttribute("d", paths[currentStep]);
-        container.innerHTML = svgs[currentStep];
+        // container.innerHTML = svgs[currentStep];
         if (currentStep <= totalSteps) {
           steps[currentStep - 1].classList.remove("hidden");
           // path.setAttribute("d", paths[currentStep]);
-          container.innerHTML = svgs[currentStep];
+          // container.innerHTML = svgs[currentStep];
         }
+        updateDisplay();
       }
     });
   });
@@ -180,12 +263,22 @@ prevButton.addEventListener("click", function () {
     currentStep--;
     steps[currentStep].classList.add("hidden");
     steps[currentStep].classList.remove("completed");
+
     if (currentStep > 0) {
       steps[currentStep - 1].classList.remove("completed");
+      steps[currentStep - 1].classList.remove("hidden");
+    }
+
+    if (currentStep < 5) {
+      paper.style.transform = "rotateZ(0deg)";
+
+      steps[currentStep].classList.remove("completed");
+      steps[currentStep].classList.add("hidden");
     }
     console.log(currentStep);
     // path.setAttribute("d", paths[currentStep]);
-    container.innerHTML = svgs[currentStep];
+    // container.innerHTML = svgs[currentStep];
+    updateDisplay();
   }
 });
 
@@ -196,23 +289,53 @@ nextButton.addEventListener("click", function () {
     currentStep++;
     console.log(currentStep);
     // path.setAttribute("d", paths[currentStep]);
-    container.innerHTML = svgs[currentStep];
+    // container.innerHTML = svgs[currentStep];
+    if (currentStep == 5) {
+      paper.style.transform = "rotateZ(67deg)";
+      steps.forEach(function (step) {
+        if (step) {
+          step.classList.add("hidden");
+        }
+      });
+    }
+
+    updateDisplay();
   }
 });
 
 resetButton.addEventListener("click", function () {
   currentStep = 1;
-  console.log(currentStep);
+  paper.style.transform = "rotateZ(0deg)";
 
+  // Reset all steps
   steps.forEach(function (step, index) {
     step.classList.remove("completed");
-    step.classList.add("hidden");
-    // path.setAttribute("d", paths[currentStep]);
-    container.innerHTML = svgs[currentStep];
+    if (index === 0) {
+      step.classList.remove("hidden");
+    } else {
+      step.classList.add("hidden");
+    }
   });
 
-  steps[0].classList.remove("hidden");
-  steps[0].classList.add("active");
-  // path.setAttribute("d", paths[0]);
-  container.innerHTML = svgs[0];
+  updateDisplay();
 });
+
+updateDisplay();
+
+// resetButton.addEventListener("click", function () {
+//   currentStep = 1;
+//   console.log(currentStep);
+
+//   steps.forEach(function (step, index) {
+//     step.classList.remove("completed");
+//     step.classList.add("hidden");
+//     // path.setAttribute("d", paths[currentStep]);
+//     // container.innerHTML = svgs[currentStep];
+
+//   });
+
+//   steps[0].classList.remove("hidden");
+//   steps[0].classList.add("completed");
+//   // path.setAttribute("d", paths[0]);
+//   container.innerHTML = svgs[0];
+// });
