@@ -4,6 +4,8 @@
  buttons in the footer. Next, previous and reset. The biggest challenge was to create a changing shape, origami has distict shapes in the proces. I tried several approaches; clip-path, flip, transform. 
  Unfortunatly none of these worked the way I inted it to look. I ended up choosing SVG paths, creating my own paths. each paths connected to a new step. I loop trough an array of SVG viewboxes to change the visuals-->
 
+<!-- I used W3school website and moozilla a lot while building this webpage, I also looked back at any class materials as well as previous assignments. If I used a spefic source other than these it is mentioned at the location of use -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +55,7 @@
           </svg>
 
           <!-- I started by 'glueing' 2 squares together as the paper, I later realized I could not manipulate this shape the way I wanted to, so I ended up not using this. Instead I 
- used a SVG box in which I change the path -->
+          used a SVG box in which I change the path -->
 
           <!-- <div class="front square">voorkant papier</div>
           <div class="back square flip">achterkant papier</div> -->
@@ -81,7 +83,7 @@
       </footer>
     </main>
 
-    <!-- step by step written text, supporting the visual changes for each step -->
+    <!-- step by step written text, supporting the visual changes for each step. Added a section on the bottom of the sidebar for the rights of the sound -->
 
     <section class="sidebar">
       <h1>Step instructions</h1>
@@ -93,3 +95,10 @@
     </section>
   </body>
 </html>
+
+
+<!-- reflection on implementing this project further:
+If I were to implement this webpage into a broader project, it would expand with more tutorials. This brings a need for a (expandable) sidebar with all the options.
+This also means a lot more SVG would have to be made. This could be done more easily with a more mathemetical structure, where one can manipulate an object istead of a path (inspiration form https://www.onemotion.com/fold-cut-paper/).
+This way each tutorial has an array of point and movements it demonstrates
+-->

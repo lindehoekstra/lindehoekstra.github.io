@@ -6,7 +6,7 @@
 const paper = document.querySelector(".paper");
 console.log(paper);
 
-// had this function to make sure the 2 sides of the paper where stuck together
+// had this function to make sure the 2 sides of the paper where stuck together, not needed anymore
 
 // paper.addEventListener("click", function () {
 //   paper.classList.toggle("flip");
@@ -60,17 +60,19 @@ console.log(currentStep);
 // const totalSteps = 7;
 // console.log(totalSteps);
 
+// this ensures the loop for the buttons only goes so far
 const totalSteps = 5;
 console.log(totalSteps);
 
-const path = document.querySelector("#fold-path");
-console.log(path);
+// old way of changing the svg, I now have multiple paths per element, so this was not sufficient anymore
+// const path = document.querySelector("#fold-path");
+// console.log(path);
 
 // sound for the buttons
 const sound = document.querySelector("#sound");
 console.log(sound);
 
-// call up all the svg paths and put them in an array
+// Put all the svg paths in 1 array
 
 const svgs = [
   `<svg
@@ -184,10 +186,12 @@ const svgs = [
     </svg>`,
 ];
 
+// create the container for the svg and the written description
 const container = document.querySelector("#svg-container");
 
 const stepText = document.querySelector(".step-text");
 
+// written instructions for each step
 const stepInstruction = [
   `<p> <h2>Step 1:</h2><br>Start with a squared piece of paper. Put the preffered colour of your heart side down.</p>`,
   `<p> <h2>Step 2:</h2><br>Fold the bottom right corner up. There is no exact reference, try to create 4 similair sized traingles.</p>`,
@@ -207,9 +211,6 @@ const stepInstruction = [
 //   "M 452.59999990463257 207.375 L 492.59999990463257 148.375 L 556.5999999046326 152.375 L 614.5999999046326 179.375 L 719.5999999046326 398.375 L 465.59999990463257 499.375 L 405.59999990463257 505.375 L 368.59999990463257 462.375 L 371.59999990463257 404.375 L 453.59999990463257 307.375 L 448.59999990463257 203.375 Z",
 // ];
 
-// use a for loop to go through all the step buttons
-// https://www.w3schools.com/tags/att_data-.asp
-
 //I used a for loop to go through all the circle buttons, using the data marker to keep track on which step the user is and what button has been clicked (https://www.w3schools.com/tags/att_data-.asp, used this specific source to create the data tag).
 // I used the same setup and logic as I used for assignment 2, and applied it to this scenario.
 // The loop reads which button has been clicked, 1 is added to the number (to account for an array starting at 0, and my counting in the html at 1), this number compared to make sure it is the newest step
@@ -217,9 +218,9 @@ const stepInstruction = [
 // Since I am replacing the whole svg box i have to update the display so the circles are added back in
 // next to that the last stap will rotate the shape so the heart is straight.
 // Unfortunatly there is a little bug in my code, the previous and next button are not 100% functioning like I envisioned. Once you click through to the end of the tutorial and then use the previous button, the circes are not displayed correctly.
-// If you use the button before step 4, it works like I inteded to.
+// If you use the previous button before step 4, it works like I inteded to.
 // If you just use the next button to go through the tutorial, it seems to skip a step in the end.
-// Using the number circles does work correctly
+// Using the number circles does work correctly.
 
 function updateDisplay() {
   container.innerHTML = svgs[currentStep - 1];
@@ -230,6 +231,7 @@ function updateDisplay() {
   stepText.innerHTML = stepInstruction[currentStep - 1];
 }
 
+// go through the circle buttons. Once the end is reached the paper gets rotated to see the heart straight
 steps.forEach(function (button) {
   button.addEventListener("click", function () {
     sound.play();
@@ -329,4 +331,5 @@ resetButton.addEventListener("click", function () {
   updateDisplay();
 });
 
+// initial vieuw
 updateDisplay();

@@ -178,7 +178,6 @@ h2 {
   /* flex-direction: row; */
   width: 15%;
   height: 100vh;
-  /* border-left: 5px solid var(--text-color); */
   position: relative;
   padding-left: 10px;
   background-color: var(--main-detail-color);
